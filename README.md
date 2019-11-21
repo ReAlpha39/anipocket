@@ -1,16 +1,12 @@
-# anipocket
+# AniPocket  
+           
+Anipocket adalah aplikasi yang dibuat dan ditujukan untuk para penggemar anime, 
+yang isinya mencakup berbagai informasi diantaranya review, detail, trailer 
+dan masih banyak lagi.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Anipoket menyajikan beberapa fitur diantaranya yaitu :
+- Recent anime headlines–anime news from myAnimelist sources
+- Get recomendation anime
+- Discover new anime and explore anime by category and advanced filters
+- Notifikasi perilisan anime
+- Watchlist

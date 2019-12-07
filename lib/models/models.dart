@@ -11,3 +11,4 @@ export 'picture.dart';
 export 'recommendation.dart';
 export 'score.dart';
 export 'promo.dart';
+export 'top.dart';

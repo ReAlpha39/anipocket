@@ -1,29 +1,22 @@
-abstract class SeasonType {}
+enum SeasonType { WINTER, SPRING, SUMMER, FALL }
 
-class Summer extends SeasonType {
-  @override
-  String toString() {
-    return 'summer';
-  }
-}
+final seasonTypeValues = EnumValues({
+    "Fall": SeasonType.FALL,
+    "Spring": SeasonType.SPRING,
+    "Summer": SeasonType.SUMMER,
+    "Winter": SeasonType.WINTER
+});
 
-class Spring extends SeasonType {
-  @override
-  String toString() {
-    return 'spring';
-  }
-}
+class EnumValues<T> {
+    Map<String, T> map;
+    Map<T, String> reverseMap;
 
-class Fall extends SeasonType {
-  @override
-  String toString() {
-    return 'fall';
-  }
-}
+    EnumValues(this.map);
 
-class Winter extends SeasonType {
-  @override
-  String toString() {
-    return 'winter';
-  }
+    Map<T, String> get reverse {
+        if (reverseMap == null) {
+            reverseMap = map.map((k, v) => new MapEntry(v, k));
+        }
+        return reverseMap;
+    }
 }

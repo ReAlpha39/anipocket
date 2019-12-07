@@ -6,3 +6,4 @@ export 'episode.dart';
 export 'character.dart';
 export 'producer.dart';
 export 'related.dart';
+export 'article.dart';

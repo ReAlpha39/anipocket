@@ -1,0 +1,14 @@
+export 'aired.dart';
+export 'anime_info.dart';
+export 'anime_info.dart';
+export 'genre.dart';
+export 'episode.dart';
+export 'character.dart';
+export 'producer.dart';
+export 'related.dart';
+export 'article.dart';
+export 'picture.dart';
+export 'recommendation.dart';
+export 'score.dart';
+export 'promo.dart';
+export 'top.dart';

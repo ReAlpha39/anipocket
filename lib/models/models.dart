@@ -10,3 +10,4 @@ export 'article.dart';
 export 'picture.dart';
 export 'recommendation.dart';
 export 'score.dart';
+export 'promo.dart';

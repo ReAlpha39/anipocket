@@ -7,3 +7,4 @@ export 'character.dart';
 export 'producer.dart';
 export 'related.dart';
 export 'article.dart';
+export 'picture.dart';

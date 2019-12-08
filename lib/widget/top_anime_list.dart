@@ -1,10 +1,11 @@
 import 'package:anipocket/models/models.dart';
 import 'package:flutter/material.dart';
 
+import '../models/type.dart';
 import '../repositories/jikan_api.dart';
 
 class TopAnimeList extends StatelessWidget {
-   final Top topAnime;
+  final Top topAnime;
 
   const TopAnimeList({this.topAnime});
   @override
@@ -33,7 +34,7 @@ class TopAnimeList extends StatelessWidget {
                       image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                              'https://cdn.myanimelist.net/images/anime/5/87048l.jpg'))),
+                              topAnime.imageUrl))),
                 ),
                 Container(
                   padding: const EdgeInsets.all(10),
@@ -44,7 +45,7 @@ class TopAnimeList extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'Kimi no Na wa.',
+                          topAnime.title,
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
@@ -56,35 +57,35 @@ class TopAnimeList extends StatelessWidget {
                         Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Score : 9.09' ,
+                            'Score :' + topAnime.score.toString(),
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Rank : #4' ,
+                            'Rank : #' + topAnime.rank.toString(),
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Movie',
+                            typeValues.reverse[topAnime.type],
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
-                          Container(
+                        Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Episode : 1',
+                            'Episode : ' + topAnime.episodes.toString(),
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
-                         Container(
+                        Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Aug 2016 - Aug 2016',
+                            topAnime.startDate + ' - ' + topAnime.endDate,
                             style: TextStyle(fontSize: 12),
                           ),
                         ),

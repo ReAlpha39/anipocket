@@ -17,7 +17,14 @@ class Register extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 60),
                 child: IconApps(),
               ),
-        ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 20.0),
+                child: Text(
+                  "AniPocket",
+                  style: TextStyle(fontSize: 30.0),
+                ),
+              ),
+            ]),
       ),
     );
   }

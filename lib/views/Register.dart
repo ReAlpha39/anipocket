@@ -108,6 +108,9 @@ class Register extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.white,
+                                 image: DecorationImage(
+                              image: AssetImage('Assets/FB.jpg'),
+                              ),
                               ),
                             ),
                           ]))

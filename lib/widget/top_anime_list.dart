@@ -44,6 +44,13 @@ class TopAnimeList extends StatelessWidget {
                         SizedBox(
                           height: 5,
                         ),
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Text(
+                            'Score : 9.09' ,
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ),
                       ],
                     ),
                   ),

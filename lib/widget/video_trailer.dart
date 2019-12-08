@@ -15,15 +15,13 @@ class _VideoTrailerState extends State<VideoTrailer> {
   void initState() {
     data();
     _controller = YoutubePlayerController(
-      initialVideoId: 'HmPSEs5OSts',
-      flags: YoutubePlayerFlags(
-        mute: false,
-        autoPlay: false,
-        controlsVisibleAtStart: true,
-        forceHideAnnotation: true,
-        disableDragSeek: true
-      )
-    );
+        initialVideoId: 'HmPSEs5OSts',
+        flags: YoutubePlayerFlags(
+            mute: false,
+            autoPlay: false,
+            controlsVisibleAtStart: true,
+            forceHideAnnotation: true,
+            disableDragSeek: true));
     super.initState();
   }
 
@@ -44,11 +42,22 @@ class _VideoTrailerState extends State<VideoTrailer> {
       body: Column(
         children: <Widget>[
           Container(
-            child: YoutubePlayer(
+              child: YoutubePlayer(
             controller: _controller,
             showVideoProgressIndicator: false,
             topActions: <Widget>[
               SizedBox(width: 8.0),
+              Expanded(
+                child: Text(
+                  _controller.metadata.title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 10,
+                ),
+              ),
             ],
           )),
         ],

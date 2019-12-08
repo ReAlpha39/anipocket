@@ -1,4 +1,3 @@
-import 'package:anipocket/views/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:anipocket/widget/bloc.dart';
 

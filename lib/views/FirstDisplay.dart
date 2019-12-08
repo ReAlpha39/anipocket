@@ -2,6 +2,8 @@ import 'package:anipocket/views/Login_Page.dart';
 import 'package:anipocket/widget/Icon_Apps.dart';
 import 'package:flutter/material.dart';
 
+import 'Register.dart';
+
 class FirstDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -56,14 +58,24 @@ class FirstDisplay extends StatelessWidget {
               child: Padding(
                 padding:
                     const EdgeInsets.only(left: 5.0, right: 10.0, top: 300.0),
-                child: Container(
-                    alignment: Alignment.center,
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                        color: Colors.blueGrey[800],
-                        borderRadius: BorderRadius.circular(60.0)),
-                    child: Text("Register",
-                        style: TextStyle(fontSize: 15.0, color: Colors.white))),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Register(),
+                        ));
+                  },
+                  child: Container(
+                      alignment: Alignment.center,
+                      height: 45.0,
+                      decoration: BoxDecoration(
+                          color: Colors.blueGrey[800],
+                          borderRadius: BorderRadius.circular(60.0)),
+                      child: Text("Register",
+                          style:
+                              TextStyle(fontSize: 15.0, color: Colors.white))),
+                ),
               ),
             ),
           ]),

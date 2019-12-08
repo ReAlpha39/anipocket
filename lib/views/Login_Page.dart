@@ -53,6 +53,26 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 40, right: 40, top: 40
+                      ),
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 50,
+                        child: Text("LOGIN",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black),),
+                      ),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),

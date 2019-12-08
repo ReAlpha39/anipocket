@@ -39,7 +39,7 @@ class CardAnime extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Container(
-                height: 200,
+                height: 220,
                 width: 150,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -52,7 +52,7 @@ class CardAnime extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  height: 200,
+                  height: 220,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[

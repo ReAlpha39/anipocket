@@ -108,6 +108,12 @@ class Register extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.white,
+                                boxShadow: [
+                            BoxShadow(
+                                color: Colors.black26,
+                                offset: Offset(0, 2),
+                                blurRadius: 6.0)
+                          ],
                                  image: DecorationImage(
                               image: AssetImage('Assets/FB.jpg'),
                               ),

@@ -3,6 +3,7 @@ import 'package:anipocket/models/season/season_anime.dart';
 import 'package:anipocket/models/season/season_type.dart';
 import 'package:anipocket/models/type.dart';
 import 'package:anipocket/repositories/jikan_api.dart';
+import 'package:anipocket/widget/CardAnime.dart';
 
 import 'package:flutter/material.dart';
 
@@ -37,10 +38,7 @@ class _WatchListState extends State<WatchList> {
               return ListView.builder(
                 itemCount: snapshot.data.anime.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(color: Colors.grey, height: 200,),
-                  );
+                  return CardAnime(anime: snapshot.data.anime[index]);
                 },
               );
             }

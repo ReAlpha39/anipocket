@@ -90,6 +90,10 @@ class Register extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
+                      Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Text('Sign in With'),
+                    )
                     ]),
                   )
                 ]

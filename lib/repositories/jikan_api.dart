@@ -1,5 +1,9 @@
 import 'dart:io';
 
+import 'package:anipocket/models/season/season_anime.dart';
+import 'package:anipocket/models/season/season_archive.dart';
+import 'package:anipocket/models/season/season_later.dart';
+import 'package:anipocket/models/season/season_type.dart';
 import 'package:http/http.dart' as http;
 import 'package:anipocket/models/models.dart';
 import 'package:anipocket/models/request_type/request_type.dart';
@@ -221,4 +225,34 @@ class JikanApi {
     }
     return output;
   }
+
+  Future<SeasonAnime> getSeasonAnime(int year, SeasonType seasonType) async {
+    var url = baseUrl + '/season/$year/$seasonType';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = SeasonAnime.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
+
+  Future<SeasonLater> getSeasonLater() async {
+    var url = baseUrl + '/season/later';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = SeasonLater.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
+
+  
 }

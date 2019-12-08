@@ -254,5 +254,17 @@ class JikanApi {
     return output;
   }
 
-  
+  Future<SeasonArchive> getSeasonArchive() async {
+    var url = baseUrl + '/season/archive';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = SeasonArchive.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
 }

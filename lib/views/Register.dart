@@ -37,6 +37,18 @@ class Register extends StatelessWidget {
                       ),
                 ),
               ),
+               Padding(
+                padding: const EdgeInsets.only(
+                    top: 20, left: 40, right: 40, bottom: 0),
+                child: TextField(
+                  decoration: InputDecoration(
+                      labelText: 'Email',
+                      prefixIcon: Icon(
+                        Icons.email,
+                        size: 18,
+                      )),
+                ),
+              ),
             ]),
       ),
     );

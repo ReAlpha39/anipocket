@@ -51,6 +51,13 @@ class TopAnimeList extends StatelessWidget {
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Text(
+                            'Movie',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ),
                       ],
                     ),
                   ),

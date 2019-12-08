@@ -165,4 +165,60 @@ class JikanApi {
     }
     return output;
   }
+
+  Future<AnimeNews> getMangaNews(int mangaId) async {
+    var url = baseUrl + '/anime/$mangaId/news';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = AnimeNews.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
+
+  Future<AnimePictures> getMangaPictures(int mangaId) async {
+    var url = baseUrl + '/anime/$mangaId/pictures';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = AnimePictures.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
+
+  Future<Stats> getMangaStats(int mangaId) async {
+    var url = baseUrl + '/anime/$mangaId/stats';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = Stats.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
+
+  Future<AnimeRecommendations> getMangaRecommendations(int mangaId) async {
+    var url = baseUrl + '/anime/$mangaId/recommendations';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = AnimeRecommendations.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
 }

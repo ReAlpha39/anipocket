@@ -40,8 +40,8 @@ class JikanApi {
     return output;
   }
 
-  Future<AnimeEpisodes> getAnimeEpisodes(int animeId) async {
-    var url = baseUrl + '/anime/$animeId';
+  Future<AnimeEpisodes> getAnimeEpisodes(int animeId, {int episodes = 1}) async {
+    var url = baseUrl + '/anime/$animeId/episodes/$episodes';
     var output;
     try {
       var response = await http.get(url);
@@ -55,7 +55,7 @@ class JikanApi {
   }
 
   Future<AnimeNews> getAnimeNews(int animeId) async {
-    var url = baseUrl + '/anime/$animeId';
+    var url = baseUrl + '/anime/$animeId/news';
     var output;
     try {
       var response = await http.get(url);
@@ -69,7 +69,7 @@ class JikanApi {
   }
 
   Future<AnimePictures> getAnimePictures(int animeId) async {
-    var url = baseUrl + '/anime/$animeId';
+    var url = baseUrl + '/anime/$animeId/pictures';
     var output;
     try {
       var response = await http.get(url);
@@ -81,4 +81,6 @@ class JikanApi {
     }
     return output;
   }
+
+  
 }

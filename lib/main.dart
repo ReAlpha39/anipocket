@@ -1,4 +1,5 @@
 import 'package:anipocket/views/home_page.dart';
+import 'package:anipocket/views/watchlist.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: WatchList(),
     );
   }
 }

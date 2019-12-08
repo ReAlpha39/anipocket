@@ -145,12 +145,12 @@ class JikanApi {
   }
 
   Future<MangaInfo> getMangaInfo(int mangaId) async {
-    var url = baseUrl + '/anime/$mangaId';
+    var url = baseUrl + '/manga/$mangaId';
     var output;
     try {
       var response = await http.get(url);
       if (response.statusCode == 200) {
-        output = AnimeNews.fromRawJson(response.body);
+        output = MangaInfo.fromRawJson(response.body);
       }
     } on SocketException{
       throw Exception('Connection Error');
@@ -159,7 +159,7 @@ class JikanApi {
   }
 
   Future<CharactersStaff> getMangaCharacters(int mangaId) async {
-    var url = baseUrl + '/anime/$mangaId/characters';
+    var url = baseUrl + '/manga/$mangaId/characters';
     var output;
     try {
       var response = await http.get(url);
@@ -173,7 +173,7 @@ class JikanApi {
   }
 
   Future<AnimeNews> getMangaNews(int mangaId) async {
-    var url = baseUrl + '/anime/$mangaId/news';
+    var url = baseUrl + '/manga/$mangaId/news';
     var output;
     try {
       var response = await http.get(url);
@@ -187,7 +187,7 @@ class JikanApi {
   }
 
   Future<AnimePictures> getMangaPictures(int mangaId) async {
-    var url = baseUrl + '/anime/$mangaId/pictures';
+    var url = baseUrl + '/manga/$mangaId/pictures';
     var output;
     try {
       var response = await http.get(url);
@@ -201,7 +201,7 @@ class JikanApi {
   }
 
   Future<Stats> getMangaStats(int mangaId) async {
-    var url = baseUrl + '/anime/$mangaId/stats';
+    var url = baseUrl + '/manga/$mangaId/stats';
     var output;
     try {
       var response = await http.get(url);
@@ -215,7 +215,7 @@ class JikanApi {
   }
 
   Future<AnimeRecommendations> getMangaRecommendations(int mangaId) async {
-    var url = baseUrl + '/anime/$mangaId/recommendations';
+    var url = baseUrl + '/manga/$mangaId/recommendations';
     var output;
     try {
       var response = await http.get(url);

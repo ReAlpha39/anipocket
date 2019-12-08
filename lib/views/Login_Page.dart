@@ -147,6 +147,13 @@ class LoginPage extends StatelessWidget {
                               fontSize: 14,
                               fontWeight: FontWeight.w300),
                         ),
+                        TextSpan(
+                          text: 'Sign Up ',
+                          style: TextStyle(
+                              color: Colors.lightGreen[400],
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ]
                     )
                   ),

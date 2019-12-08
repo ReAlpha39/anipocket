@@ -132,7 +132,7 @@ class Register extends StatelessWidget {
                                         blurRadius: 6.0)
                                   ],
                                   image: DecorationImage(
-                                      image: AssetImage('Assets/google.jpg'))),
+                                      image: AssetImage('Assets/GOOGLE.jpg'))),
                             ),
                           ]))
                 ])));

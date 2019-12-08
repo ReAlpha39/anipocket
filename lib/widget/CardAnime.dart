@@ -1,4 +1,5 @@
 import 'package:anipocket/models/season/anime.dart';
+import 'package:anipocket/models/type.dart';
 import 'package:flutter/material.dart';
 
 class CardAnime extends StatelessWidget {
@@ -51,6 +52,18 @@ class CardAnime extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(anime.title),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 6, bottom: 6),
+                          width: double.infinity,
+                          color: Colors.grey[100],
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Text(typeValues.reverse[anime.type], style: TextStyle(fontSize: 12),),
+                              Text(anime.score.toString(), style: TextStyle(fontSize: 12))
+                            ],
                           ),
                         )
                       ],

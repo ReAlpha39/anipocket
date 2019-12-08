@@ -1,3 +1,5 @@
+import 'package:anipocket/models/models.dart';
+import 'package:anipocket/repositories/jikan_api.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -45,8 +47,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  var api = JikanApi();
 
-  void _incrementCounter() {
+  void _incrementCounter() async {
+    var data = await api.getTop(TopType.anime);
+    print(data.top);
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below

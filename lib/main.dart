@@ -1,4 +1,5 @@
 import 'package:anipocket/models/models.dart';
+import 'package:anipocket/models/schedule/list_day.dart';
 import 'package:anipocket/repositories/jikan_api.dart';
 import 'package:flutter/material.dart';
 
@@ -50,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
   var api = JikanApi();
 
   void _incrementCounter() async {
-    var data = await api.getMangaInfo(90125);
-    print(data == null ? 'null' : data.title);
+    var data = await api.getAnimeSchedule(ListDay.all);
+    print(data == null ? 'null' : data);
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below

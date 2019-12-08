@@ -1,5 +1,5 @@
 enum ListDay { monday, tuesday, wednesday, thursday, 
-              friday, saturday, sunday, other, unknown }
+              friday, saturday, sunday, other, unknown, all }
 
 String listDayToString(ListDay day) {
   switch (day) {

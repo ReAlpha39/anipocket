@@ -271,7 +271,7 @@ class JikanApi {
   }
 
   Future<AnimeSchedule> getAnimeSchedule(ListDay day) async {
-    var url = baseUrl + '/schedule/$day';
+    var url = baseUrl + '/schedule/${listDayToString(day)}';
     var output;
     try {
       var response = await http.get(url);

@@ -138,5 +138,17 @@ class JikanApi {
     return output;
   }
 
-  
+  Future<CharactersStaff> getMangaCharacters(int mangaId) async {
+    var url = baseUrl + '/anime/$mangaId/characters';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = CharactersStaff.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
 }

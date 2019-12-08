@@ -1,3 +1,4 @@
+import 'package:anipocket/widget/Icon_Apps.dart';
 import 'package:flutter/material.dart';
 
 class FirstDisplay extends StatelessWidget {
@@ -10,6 +11,11 @@ class FirstDisplay extends StatelessWidget {
                       fit: BoxFit.cover
                       ),
         ),
-    );
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              IconApps(),
+            ],),),
+    ));
   }
 }

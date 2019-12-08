@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:anipocket/models/schedule/anime_schedule.dart';
+import 'package:anipocket/models/schedule/list_day.dart';
 import 'package:anipocket/models/season/season_anime.dart';
 import 'package:anipocket/models/season/season_archive.dart';
 import 'package:anipocket/models/season/season_later.dart';
@@ -261,6 +263,20 @@ class JikanApi {
       var response = await http.get(url);
       if (response.statusCode == 200) {
         output = SeasonArchive.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
+
+  Future<AnimeSchedule> getAnimeSchedule(ListDay day) async {
+    var url = baseUrl + '/schedule/$day';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = AnimeSchedule.fromRawJson(response.body);
       }
     } on SocketException{
       throw Exception('Connection Error');

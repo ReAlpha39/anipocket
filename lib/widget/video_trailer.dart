@@ -59,6 +59,10 @@ class _VideoTrailerState extends State<VideoTrailer> {
                 ),
               ),
             ],
+            onEnded: (id) {
+              _controller.reset();
+              _controller.reload();
+            },
           )),
         ],
       ),

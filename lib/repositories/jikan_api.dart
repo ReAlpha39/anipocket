@@ -109,4 +109,18 @@ class JikanApi {
     }
     return output;
   }
+
+  Future<AnimeRecommendations> getAnimeRecommendations(int animeId) async {
+    var url = baseUrl + '/anime/$animeId/recommendations';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = AnimeNews.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
 }

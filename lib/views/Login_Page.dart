@@ -24,6 +24,16 @@ class LoginPage extends StatelessWidget {
                   "AniPocket",
                   style: TextStyle(fontSize: 30)
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 20, left: 40, right: 40, bottom: 0
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                  ),
+                ),
               )
             ],
           ),

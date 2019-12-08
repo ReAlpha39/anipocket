@@ -2,18 +2,18 @@ import 'dart:convert';
 
 import 'package:anipocket/models/models.dart';
 
-class AnimeNews {
+class News {
     List<Article> articles;
 
-    AnimeNews({
+    News({
         this.articles,
     });
 
-    factory AnimeNews.fromRawJson(String str) => AnimeNews.fromJson(json.decode(str));
+    factory News.fromRawJson(String str) => News.fromJson(json.decode(str));
 
     String toRawJson() => json.encode(toJson());
 
-    factory AnimeNews.fromJson(Map<String, dynamic> json) => AnimeNews(
+    factory News.fromJson(Map<String, dynamic> json) => News(
         articles: json["articles"] == null ? null : List<Article>.from(json["articles"].map((x) => Article.fromJson(x))),
     );
 

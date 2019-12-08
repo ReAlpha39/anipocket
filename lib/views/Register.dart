@@ -71,6 +71,9 @@ class Register extends StatelessWidget {
                           child: Container(
                               alignment: Alignment.center,
                               height: 50.0,
+                              decoration: BoxDecoration(
+                              color: Colors.lightGreen[400],
+                              borderRadius: BorderRadius.circular(60.0)),
                               child: Text("REGISTER",
                                   style: TextStyle(
                                       fontSize: 15.0, color: Colors.black))),

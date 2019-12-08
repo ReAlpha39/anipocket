@@ -48,6 +48,22 @@ class EditProfile extends StatelessWidget {
                 decoration: new InputDecoration(labelText: 'Status'),
               ),
             ),
+            new Row(
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 40.0, right: 40.0, top: 50.0),
+                    child: new Container(
+                        alignment: Alignment.center,
+                        height: 50.0,
+                        child: new Text("Save",
+                            style: new TextStyle(
+                                fontSize: 17.0, color: Colors.black))),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),

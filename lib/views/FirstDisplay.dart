@@ -45,10 +45,25 @@ class FirstDisplay extends StatelessWidget {
                                     fontSize: 15.0, color: Colors.white))),
                       ),
                     ),
+                    Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 5.0, right: 10.0, top: 300.0),
+                        child: Container(
+                            alignment: Alignment.center,
+                            height: 45.0,
+                            decoration: BoxDecoration(
+                                color: Colors.blueGrey[800],
+                                borderRadius: BorderRadius.circular(60.0)),
+                            child: Text("Register",
+                                style: TextStyle(
+                                    fontSize: 15.0, color: Colors.white))),
+                      ),
+                    ),
                 ]),
-          ],
+                ]),
+          
         ),
-        ))
-    );
+        ));
   }
 }

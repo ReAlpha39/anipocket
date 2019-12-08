@@ -1,3 +1,4 @@
+import 'package:anipocket/widget/Icon_Apps.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class LoginPage extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(top: 60),
-                
+                child: IconApps(),
               )
             ],
           ),

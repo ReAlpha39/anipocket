@@ -33,6 +33,13 @@ class EditProfile extends StatelessWidget {
                 )
               ],
             ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
+              child: new TextField(
+                decoration: new InputDecoration(labelText: 'Username'),
+              ),
+            ),
           ],
         ),
       ),

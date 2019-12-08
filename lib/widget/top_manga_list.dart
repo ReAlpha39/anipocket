@@ -1,4 +1,6 @@
-import 'package:anipocket/models/manga_info.dart';
+
+import 'package:anipocket/models/genre.dart';
+import 'package:anipocket/models/genre/genre_id.dart';
 import 'package:anipocket/models/models.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +35,7 @@ class TopMangaList extends StatelessWidget {
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          'https://cdn.myanimelist.net/images/manga/1/157931l.jpg'))),
+                          topManga.imageUrl))),
             ),
                 Container(
                   padding: const EdgeInsets.all(10),
@@ -44,7 +46,7 @@ class TopMangaList extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'Berserk',
+                          topManga.title,
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
@@ -56,14 +58,14 @@ class TopMangaList extends StatelessWidget {
                         Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Score : 9.30',
+                            topManga.score.toString(),
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
                          Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Rank : #1',
+                            'Rank : #' + topManga.rank.toString(),
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
@@ -77,14 +79,14 @@ class TopMangaList extends StatelessWidget {
                         Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Aug 25, 1989 to ?',
+                            'Members : ' + topManga.members.toString(),
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
-                            'Genre :  Action, Adventure, Demons, Drama, Fantasy, Horror, Supernatural, Military, Psychological, Seinen',
+                            topManga.url,
                             style: TextStyle(fontSize: 12),
                           ),
                         ),

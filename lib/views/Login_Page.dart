@@ -76,6 +76,18 @@ class LoginPage extends StatelessWidget {
                     ),
                   )
                 ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      '- OR -',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500)
+                    )
+                  ],
+                ),
               )
             ],
           ),

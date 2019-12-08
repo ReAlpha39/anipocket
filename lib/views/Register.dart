@@ -49,6 +49,19 @@ class Register extends StatelessWidget {
                       )),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 20, left: 40, right: 40, bottom: 0),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      labelText: 'Password',
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        size: 18,
+                      )),
+                ),
+              ),
             ]),
       ),
     );

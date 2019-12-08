@@ -27,9 +27,24 @@ class FirstDisplay extends StatelessWidget {
                 )
               ],
             ),
+            Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20.0, right: 5.0, top: 300.0),
+                        child: Container(
+                            alignment: Alignment.center,
+                            height: 45.0,
+                            child: Text("Sign In",
+                                style: TextStyle(
+                                    fontSize: 15.0, color: Colors.white))),
+                      ),
+                    ),
+                ]),
           ],
         ),
-      ),
-    ));
+        ))
+    );
   }
 }

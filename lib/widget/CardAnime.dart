@@ -36,7 +36,27 @@ class CardAnime extends StatelessWidget {
                     fit: BoxFit.cover
                   )
                 ),
-              )
+              ),
+              Expanded(
+                  child: Container(
+                    height: 200,
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(topRight: Radius.circular(4)),
+                            color: Colors.black12
+                          ),
+                          width: double.infinity,
+                          child: Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(anime.title),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
             ],
           ),
         ),

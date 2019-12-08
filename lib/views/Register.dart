@@ -65,13 +65,17 @@ class Register extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Expanded(
-                          child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 40.0, right: 40.0, top: 40.0),
-                              child: Container(
-                                alignment: Alignment.center,
-                                height: 50.0,
-                              )))
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 40.0, right: 40.0, top: 40.0),
+                          child: Container(
+                              alignment: Alignment.center,
+                              height: 50.0,
+                              child: Text("REGISTER",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.black))),
+                        ),
+                      ),
                     ])
               ]),
         ));

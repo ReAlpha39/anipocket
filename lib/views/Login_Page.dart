@@ -32,6 +32,10 @@ class LoginPage extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Email',
+                    prefixIcon: Icon(
+                      Icons.email,
+                      size: 18,
+                    ),
                   ),
                 ),
               )

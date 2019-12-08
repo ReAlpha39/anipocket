@@ -17,6 +17,13 @@ class LoginPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 60),
                 child: IconApps(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8, bottom: 20),
+                child: Text(
+                  "AniPocket",
+                  style: TextStyle(fontSize: 30)
+                ),
               )
             ],
           ),

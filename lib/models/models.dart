@@ -13,3 +13,4 @@ export 'score.dart';
 export 'promo.dart';
 export 'top.dart';
 export 'manga_info.dart';
+export 'top_type.dart';

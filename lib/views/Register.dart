@@ -30,6 +30,10 @@ class Register extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                       labelText: 'User Name',
+                      prefixIcon: Icon(
+                        Icons.account_circle,
+                        size: 18,
+                      )
                       ),
                 ),
               ),

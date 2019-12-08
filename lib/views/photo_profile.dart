@@ -15,6 +15,11 @@ class PhotoProfile extends StatelessWidget {
               image: NetworkImage('https://cdn.myanimelist.net/images/characters/8/303847.jpg'),
               fit: BoxFit.cover,
             ),
+            borderRadius: BorderRadius.circular(80.0),
+            border: Border.all(
+              color: Colors.white,
+              width: 10.0,
+            )
           ),
         )
       ],

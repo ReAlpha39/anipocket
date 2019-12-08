@@ -109,7 +109,9 @@ class LoginPage extends StatelessWidget {
                             offset: Offset(0, 2),
                             blurRadius: 6.0
                           )
-                        ]
+                        ],
+                        image: DecorationImage(
+                          image: AssetImage('Assets/FB.jpg'))
                       ),
                     )
                   ],

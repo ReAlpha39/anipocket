@@ -57,9 +57,12 @@ class EditProfile extends StatelessWidget {
                     child: new Container(
                         alignment: Alignment.center,
                         height: 50.0,
+                        decoration: new BoxDecoration(
+                            color: Color(0xFF18D191),
+                            borderRadius: new BorderRadius.circular(60.0)),
                         child: new Text("Save",
                             style: new TextStyle(
-                                fontSize: 17.0, color: Colors.black))),
+                                fontSize: 17.0, color: Colors.white))),
                   ),
                 )
               ],

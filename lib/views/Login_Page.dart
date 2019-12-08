@@ -46,6 +46,10 @@ class LoginPage extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Password',
+                    prefixIcon: Icon(
+                        Icons.lock,
+                        size: 18,
+                    ),
                   ),
                 ),
               ),

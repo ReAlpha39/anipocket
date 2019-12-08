@@ -28,6 +28,7 @@ class FirstDisplay extends StatelessWidget {
               ],
             ),
             Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Expanded(
                     child: Padding(
@@ -36,6 +37,9 @@ class FirstDisplay extends StatelessWidget {
                         child: Container(
                             alignment: Alignment.center,
                             height: 45.0,
+                            decoration: BoxDecoration(
+                                color: Colors.blueGrey[900],
+                                borderRadius: BorderRadius.circular(60.0)),
                             child: Text("Sign In",
                                 style: TextStyle(
                                     fontSize: 15.0, color: Colors.white))),

@@ -13,6 +13,7 @@ class _VideoTrailerState extends State<VideoTrailer> {
   var api = JikanApi();
   @override
   void initState() {
+    data();
     _controller = YoutubePlayerController(
       initialVideoId: 'HmPSEs5OSts',
       flags: YoutubePlayerFlags(
@@ -24,6 +25,14 @@ class _VideoTrailerState extends State<VideoTrailer> {
       )
     );
     super.initState();
+  }
+
+  void data() async {
+    var data = await api.getAnimeInfo(9253);
+    String videoId = YoutubePlayer.convertUrlToId(data.trailerUrl);
+    vId = videoId;
+    print(vId);
+    print(data.trailerUrl);
   }
 
   @override

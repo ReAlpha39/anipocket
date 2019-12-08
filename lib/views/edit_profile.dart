@@ -15,6 +15,7 @@ class EditProfile extends StatelessWidget {
       body: Container(
         width: double.infinity,
         child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(height: 20),
             PhotoProfile(),
@@ -49,6 +50,7 @@ class EditProfile extends StatelessWidget {
               ),
             ),
             new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Expanded(
                   child: Padding(

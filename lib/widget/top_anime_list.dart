@@ -23,9 +23,30 @@ class TopAnimeList extends StatelessWidget {
                       ),
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage('https://cdn.myanimelist.net/images/anime/5/87048l.jpg')
-                          )
+                          image: NetworkImage(
+                              'https://cdn.myanimelist.net/images/anime/5/87048l.jpg'))),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  height: 200,
+                  width: 200,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'Kimi no Na wa.',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
                           ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),

@@ -1,3 +1,4 @@
+import 'package:anipocket/views/Login_Page.dart';
 import 'package:anipocket/widget/Icon_Apps.dart';
 import 'package:flutter/material.dart';
 
@@ -68,15 +69,23 @@ class Register extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 40.0, right: 40.0, top: 40.0),
-                          child: Container(
-                              alignment: Alignment.center,
-                              height: 50.0,
-                              decoration: BoxDecoration(
-                                  color: Colors.lightGreen[400],
-                                  borderRadius: BorderRadius.circular(60.0)),
-                              child: Text("REGISTER",
-                                  style: TextStyle(
-                                      fontSize: 15.0, color: Colors.black))),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginPage()));
+                            },
+                            child: Container(
+                                alignment: Alignment.center,
+                                height: 50.0,
+                                decoration: BoxDecoration(
+                                    color: Colors.lightGreen[400],
+                                    borderRadius: BorderRadius.circular(60.0)),
+                                child: Text("REGISTER",
+                                    style: TextStyle(
+                                        fontSize: 15.0, color: Colors.black))),
+                          ),
                         ),
                       ),
                     ],

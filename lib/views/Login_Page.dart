@@ -1,6 +1,8 @@
 import 'package:anipocket/widget/Icon_Apps.dart';
 import 'package:flutter/material.dart';
 
+import 'Register.dart';
+
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -136,7 +138,10 @@ class LoginPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 60),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                     Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Register()));
+                  },
                   child: RichText(
                     text: TextSpan(
                       children: [

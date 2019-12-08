@@ -25,4 +25,20 @@ class JikanApi {
     }
     return output;
   }
+
+  Future<AnimeInfo> getAnimeInfo(int animeId) async {
+    var url = baseUrl + '/anime/$animeId';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = AnimeInfo.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
+
+  
 }

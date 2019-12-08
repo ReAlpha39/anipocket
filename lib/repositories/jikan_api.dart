@@ -123,4 +123,20 @@ class JikanApi {
     }
     return output;
   }
+
+  Future<MangaInfo> getMangaInfo(int mangaId) async {
+    var url = baseUrl + '/anime/$mangaId';
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = AnimeNews.fromRawJson(response.body);
+      }
+    } on SocketException{
+      throw Exception('Connection Error');
+    }
+    return output;
+  }
+
+  
 }

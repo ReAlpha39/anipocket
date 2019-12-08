@@ -20,6 +20,19 @@ class MyApp extends StatelessWidget {
               onPressed: () {},
             )
           ]),
+             drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              ListTile(
+                title: Text('Dark Theme'),
+                trailing: Switch(
+                  value: snapshot.data,
+                  onChanged: bloc.changeTheme
+                ),
+              )
+            ],
+          ),
+        ),
         ),
       ),
     );

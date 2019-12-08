@@ -132,6 +132,25 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 60),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Don\'t have an Account? ',
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w300),
+                        ),
+                      ]
+                    )
+                  ),
+                ),
               )
             ],
           ),

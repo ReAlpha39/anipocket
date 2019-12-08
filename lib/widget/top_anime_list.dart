@@ -1,8 +1,17 @@
+import 'package:anipocket/models/models.dart';
 import 'package:flutter/material.dart';
 
+import '../repositories/jikan_api.dart';
+
 class TopAnimeList extends StatelessWidget {
+   final Top topAnime;
+
+  const TopAnimeList({this.topAnime});
   @override
   Widget build(BuildContext context) {
+    var api = JikanApi();
+    var data = api.getAnimeInfo(11061);
+
     return Column(
       children: <Widget>[
         Card(

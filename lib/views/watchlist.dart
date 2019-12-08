@@ -30,7 +30,7 @@ class _WatchListState extends State<WatchList> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         child: FutureBuilder<SeasonAnime>(
-          future: api.getSeasonAnime(2018, SeasonType.WINTER),
+          future: api.getSeasonAnime(2020, SeasonType.WINTER),
           builder: (context, snapshot) {
             if (snapshot.hasData == false) {
               return Center(child: CircularProgressIndicator());

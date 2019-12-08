@@ -24,6 +24,15 @@ class Register extends StatelessWidget {
                   style: TextStyle(fontSize: 30.0),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 20, left: 40, right: 40, bottom: 0),
+                child: TextField(
+                  decoration: InputDecoration(
+                      labelText: 'User Name',
+                      ),
+                ),
+              ),
             ]),
       ),
     );

@@ -58,6 +58,20 @@ class TopAnimeList extends StatelessWidget {
                             style: TextStyle(fontSize: 12),
                           ),
                         ),
+                          Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Text(
+                            'Episode : 1',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ),
+                         Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Text(
+                            'Aug 2016 - Aug 2016',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ),
                       ],
                     ),
                   ),

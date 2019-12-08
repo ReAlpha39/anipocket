@@ -1,8 +1,19 @@
+import 'package:anipocket/models/manga_info.dart';
+import 'package:anipocket/models/models.dart';
 import 'package:flutter/material.dart';
 
+import '../repositories/jikan_api.dart';
+
 class TopMangaList extends StatelessWidget {
+  final Top topManga;
+
+  const TopMangaList({this.topManga});
+
   @override
   Widget build(BuildContext context) {
+    var api = JikanApi();
+    var data = api.getMangaInfo(11061);
+
     return Column(children: <Widget>[
       Card(
         elevation: 10,

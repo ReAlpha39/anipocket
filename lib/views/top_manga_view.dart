@@ -1,5 +1,12 @@
+import 'package:anipocket/models/models.dart';
+import 'package:anipocket/models/request_type/request_type.dart';
 import 'package:anipocket/widget/top_manga_list.dart';
 import 'package:flutter/material.dart';
+
+
+import '../models/request_type/tops.dart';
+import '../models/top_type.dart';
+import '../repositories/jikan_api.dart';
 
 class TopMangaView extends StatelessWidget {
   @override
@@ -31,9 +38,23 @@ class TopMangaView extends StatelessWidget {
             Container(
               height: 700,
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: ListView(
-                children: <Widget>[TopMangaList()],
-              ),
+              child: FutureBuilder<Tops>(
+                future: JikanApi().getTop(TopType.manga),
+                builder: (context, snapshot){
+                  if (snapshot.hasData == false){
+                    return Container();
+                  } else{
+                    return ListView.builder(
+                      itemCount: snapshot.data.top.length,
+                      itemBuilder: (context, index){
+                        return TopMangaList(
+                         topManga : snapshot.data.top[index],
+                        );
+                      },
+                    );
+                  }
+                },
+              )
             ),
           ],
         ),

@@ -40,6 +40,14 @@ class EditProfile extends StatelessWidget {
                 decoration: new InputDecoration(labelText: 'Username'),
               ),
             ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
+              child: new TextField(
+                obscureText: true,
+                decoration: new InputDecoration(labelText: 'Status'),
+              ),
+            ),
           ],
         ),
       ),

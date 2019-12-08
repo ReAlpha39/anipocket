@@ -2,18 +2,18 @@ import 'dart:convert';
 
 import 'package:anipocket/models/models.dart';
 
-class AnimeRecommendations {
+class Recommendations {
     List<Recommendation> recommendations;
 
-    AnimeRecommendations({
+    Recommendations({
         this.recommendations,
     });
 
-    factory AnimeRecommendations.fromRawJson(String str) => AnimeRecommendations.fromJson(json.decode(str));
+    factory Recommendations.fromRawJson(String str) => Recommendations.fromJson(json.decode(str));
 
     String toRawJson() => json.encode(toJson());
 
-    factory AnimeRecommendations.fromJson(Map<String, dynamic> json) => AnimeRecommendations(
+    factory Recommendations.fromJson(Map<String, dynamic> json) => Recommendations(
         recommendations: json["recommendations"] == null ? null : List<Recommendation>.from(json["recommendations"].map((x) => Recommendation.fromJson(x))),
     );
 

@@ -6,18 +6,18 @@ import 'dart:convert';
 
 import 'package:anipocket/models/models.dart';
 
-class AnimePictures {
+class Pictures {
     List<Picture> pictures;
 
-    AnimePictures({
+    Pictures({
         this.pictures,
     });
 
-    factory AnimePictures.fromRawJson(String str) => AnimePictures.fromJson(json.decode(str));
+    factory Pictures.fromRawJson(String str) => Pictures.fromJson(json.decode(str));
 
     String toRawJson() => json.encode(toJson());
 
-    factory AnimePictures.fromJson(Map<String, dynamic> json) => AnimePictures(
+    factory Pictures.fromJson(Map<String, dynamic> json) => Pictures(
         pictures: json["pictures"] == null ? null : List<Picture>.from(json["pictures"].map((x) => Picture.fromJson(x))),
     );
 

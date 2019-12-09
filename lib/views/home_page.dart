@@ -11,7 +11,23 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Muhammad Miftah"),
+              accountEmail: Text("muhammadmiftah998@gmail.com"),
+              decoration: BoxDecoration(color: Colors.black87),
+            ),
+            ListTile(
+              title: Text("First Page"),
+              leading: Icon(Icons.home, color: Colors.redAccent[700]),
+            )
+          ],
+        ),
+      ),
       body: Container(),
     );
   }
 }
+

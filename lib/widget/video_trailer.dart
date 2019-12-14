@@ -35,37 +35,27 @@ class _VideoTrailerState extends State<VideoTrailer> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Trailer'),
-      ),
-      body: Column(
-        children: <Widget>[
-          Container(
-              child: YoutubePlayer(
-            controller: _controller,
-            showVideoProgressIndicator: false,
-            topActions: <Widget>[
-              SizedBox(width: 8.0),
-              Expanded(
-                child: Text(
-                  _controller.metadata.title,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 10,
-                ),
-              ),
-            ],
-            onEnded: (id) {
-              _controller.reset();
-              _controller.reload();
-            },
-          )),
-        ],
-      ),
+    return YoutubePlayer(
+      controller: _controller,
+      showVideoProgressIndicator: false,
+      topActions: <Widget>[
+        SizedBox(width: 8.0),
+        Expanded(
+          child: Text(
+            _controller.metadata.title,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+            ),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 10,
+          ),
+        ),
+      ],
+      onEnded: (id) {
+        _controller.reset();
+        _controller.reload();
+      },
     );
   }
 }

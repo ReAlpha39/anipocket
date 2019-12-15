@@ -228,8 +228,11 @@ class JikanApi {
     return output;
   }
 
-  Future<SeasonAnime> getSeasonAnime(int year, SeasonType seasonType) async {
-    var url = baseUrl + '/season/$year/${seasonTypeValues.reverse[seasonType].toLowerCase()}';
+  Future<SeasonAnime> getSeasonAnime({int year, SeasonType seasonType}) async {
+    var url = baseUrl + '/season';
+    if (year != null && seasonType != null) {
+      url += '/$year/${seasonTypeValues.reverse[seasonType].toLowerCase()}';
+    }
     var output;
     try {
       var response = await http.get(url);

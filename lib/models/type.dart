@@ -1,4 +1,4 @@
-enum Type { ANIME, MANGA, TV, MOVIE, SPECIAL, ONA, OVA, MANHWA, NOVEL, MANHUA }
+enum Type { ANIME, MANGA, TV, MOVIE, SPECIAL, ONA, OVA, MUSIC, DOUJIN, MANHWA, NOVEL, MANHUA, ONESHOT }
 
 final typeValues = EnumValues({
     "anime": Type.ANIME,
@@ -10,7 +10,10 @@ final typeValues = EnumValues({
     "TV": Type.TV,
     "Manhua": Type.MANHUA,
     "Manhwa": Type.MANHWA,
-    "Novel": Type.NOVEL
+    "Novel": Type.NOVEL,
+    "Music": Type.MUSIC,
+    "Oneshot": Type.ONESHOT,
+    "Doujin": Type.DOUJIN
 });
 
 class EnumValues<T> {

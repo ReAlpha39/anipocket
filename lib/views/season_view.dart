@@ -1,5 +1,5 @@
 import 'package:anipocket/redux/appstate.dart';
-import 'package:anipocket/redux/store_season_list.dart';
+import 'package:anipocket/redux/store.dart';
 import 'package:anipocket/redux/view_model.dart';
 import 'package:anipocket/widget/CardAnime.dart';
 import 'package:anipocket/widget/fab_season.dart';

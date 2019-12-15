@@ -37,6 +37,15 @@ class MangaDescription extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 120),
+                        width: MediaQuery.of(context).size.width,
+                        child: Text(
+                          '9.08',
+                          style: TextStyle(
+                              fontSize: 20, fontStyle: FontStyle.italic),
+                        ),
+                      ),
                     ],
                   ),
                 ),

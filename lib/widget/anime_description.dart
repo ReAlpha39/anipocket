@@ -24,6 +24,23 @@ class AnimeDescription extends StatelessWidget {
                         image: NetworkImage(
                             'https://cdn.myanimelist.net/images/anime/1630/103417.jpg'))),
               ),
+              Container(
+                padding: const EdgeInsets.all(5),
+                height: 250,
+                width: 250,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'Sword Art Online: Alicization - War of Underworld',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

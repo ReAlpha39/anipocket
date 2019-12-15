@@ -73,7 +73,21 @@ class AnimeDescription extends StatelessWidget {
                               ),
                             ),
                           ),
-
+                         Container(
+                            height: 30,
+                            width: 50,
+                            color: Colors.green[200],
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.share,
+                                  size: 20,
+                                  color: Colors.blueGrey,
+                                )
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),

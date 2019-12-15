@@ -17,36 +17,67 @@ class _BoxInfoState extends State<BoxInfo> {
           child: Row(
             children: <Widget>[
               Column(
-                  children: <Widget>[
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.favorite,
-                          color: Colors.white,
-                          size: 30,
-                        ),
-                        SizedBox(
-                          width: 4,
-                        ),
-                        Text(
-                          "99",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 24),
-                        )
-                      ],
-                    ),
-                    Text(
-                      "Favorite",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15),
-                    )
-                  ],
-                ),
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.favorite,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(
+                        width: 4,
+                      ),
+                      Text(
+                        "99",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 24),
+                      )
+                    ],
+                  ),
+                  Text(
+                    "Favorite",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15),
+                  )
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.add,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(
+                        width: 4,
+                      ),
+                      Text(
+                        "99",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 24),
+                      )
+                    ],
+                  ),
+                  Text(
+                    "Watch List",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15),
+                  )
+                ],
+              ),
             ],
           ),
         ),

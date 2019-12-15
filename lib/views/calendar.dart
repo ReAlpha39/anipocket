@@ -49,6 +49,9 @@ class _CalendarState extends State<Calendar> {
               },
               builders: CalendarBuilders(
                 selectedDayBuilder: (context, date, events) => Container(
+                  decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(10.0)),
                     )),
               calendarController: _controller,
             ),

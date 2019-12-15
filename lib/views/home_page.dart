@@ -27,20 +27,28 @@ class HomePage extends StatelessWidget {
                     Container(
                       width: 100,
                       height: 100,
-                      margin: EdgeInsets.only(top : 30),
+                      margin: EdgeInsets.only(top: 30, bottom: 10),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               image: NetworkImage(
                                   "https://images.wallpaperscraft.com/image/anime_face_hair_mask_85079_300x168.jpg"),
                               fit: BoxFit.fill)),
-                    )
+                    ),
+                    Text(
+                      "Muhammad Miftah",
+                      style: TextStyle(fontSize: 22, color: Colors.white),
+                    ),
+                    Text(
+                      "muhammadmiftah998@gmail.com",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ],
                 ),
               ),
             ),
             ListTile(
-              title: Text("First Page"),
+              title: Text("Top Anime"),
               onTap: () {},
             ),
             ListTile(
@@ -51,11 +59,13 @@ class HomePage extends StatelessWidget {
               title: Text("Setting"),
               onTap: () {},
             ),
-            Row(
-              children: <Widget>[
-                Text("theme"),
-              ],
-            ),
+            ListTile(
+              title: Text("Dark Theme"),
+              trailing: Switch(
+                value: false,
+                onChanged: (chnageTheme) {},
+              ),
+            )
           ],
         ),
       ),

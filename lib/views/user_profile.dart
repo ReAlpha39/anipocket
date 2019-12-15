@@ -1,3 +1,4 @@
+import 'package:anipocket/widget/box_info.dart';
 import 'package:flutter/material.dart';
 
 import 'photo_profile.dart';
@@ -33,6 +34,7 @@ class UserProfile extends StatelessWidget {
                 ),
               ],
             ),
+            BoxInfo(),
           ],
         ),
       ),

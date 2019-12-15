@@ -43,6 +43,10 @@ class _CalendarState extends State<Calendar> {
                 formatButtonTextStyle: TextStyle(color: Colors.white),
                 formatButtonShowsNext: false,
               ),
+              startingDayOfWeek: StartingDayOfWeek.monday,
+              onDaySelected: (date, events) {
+                print(date.toIso8601String());
+              },
               calendarController: _controller,
             ),
           ],

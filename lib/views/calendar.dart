@@ -40,6 +40,8 @@ class _CalendarState extends State<Calendar> {
                   color: Colors.orange,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
+                formatButtonTextStyle: TextStyle(color: Colors.white),
+                formatButtonShowsNext: false,
               ),
               calendarController: _controller,
             ),

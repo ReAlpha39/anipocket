@@ -45,6 +45,15 @@ class AnimeDescription extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
                 ),
               ),
+                       Container(
+                      padding: const EdgeInsets.only(top: 10),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(color: Colors.grey[100]),
+                      child: Text(
+                        'Fall 2019 ' + ' TV ' + ' AIring ' + ' 12eps ',
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                     ],
                   ),
                 ),

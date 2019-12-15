@@ -1,6 +1,7 @@
 import 'package:anipocket/widget/box_info.dart';
 import 'package:flutter/material.dart';
 
+import 'edit_profile.dart';
 import 'photo_profile.dart';
 
 class UserProfile extends StatelessWidget {
@@ -17,7 +18,7 @@ class UserProfile extends StatelessWidget {
         width: double.infinity,
         child: new Column(
           children: <Widget>[
-            SizedBox(height: 50),
+            SizedBox(height: 30),
             PhotoProfile(),
             Stack(
               children: <Widget>[
@@ -37,6 +38,15 @@ class UserProfile extends StatelessWidget {
             BoxInfo(),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          debugPrint('FAB clicked');
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return EditProfile();
+          }));
+        },
+        child: Icon(Icons.edit),
       ),
     );
   }

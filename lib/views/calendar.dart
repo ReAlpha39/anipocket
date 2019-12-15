@@ -41,6 +41,7 @@ class _CalendarState extends State<Calendar> {
                   borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
+              calendarController: _controller,
             ),
           ],
         )));

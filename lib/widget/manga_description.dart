@@ -23,7 +23,24 @@ class MangaDescription extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: NetworkImage(
                             'https://cdn.myanimelist.net/images/manga/3/55539.jpg'))),
-              )
+              ),
+              Container(
+                padding: const EdgeInsets.all(5),
+                height: 250,
+                width: 250,
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'One Piece',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

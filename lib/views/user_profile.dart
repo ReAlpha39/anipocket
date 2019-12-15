@@ -18,7 +18,7 @@ class UserProfile extends StatelessWidget {
         width: double.infinity,
         child: new Column(
           children: <Widget>[
-            SizedBox(height: 50),
+            SizedBox(height: 30),
             PhotoProfile(),
             Stack(
               children: <Widget>[

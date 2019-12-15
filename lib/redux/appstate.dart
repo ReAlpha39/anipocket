@@ -1,10 +1,10 @@
 import 'package:anipocket/models/season/season_anime.dart';
 
-class AppStateSeasonList {
+class AppState {
   String title;
   int year;
   SeasonAnime seasonAnime;
 
-  AppStateSeasonList({this.title, this.year, this.seasonAnime});
+  AppState({this.title, this.year, this.seasonAnime});
 
 }

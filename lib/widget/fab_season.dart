@@ -1,6 +1,6 @@
-import 'package:anipocket/redux/action_season_list.dart';
-import 'package:anipocket/redux/appstate_season_list.dart';
-import 'package:anipocket/redux/store_season_list.dart';
+import 'package:anipocket/redux/action.dart';
+import 'package:anipocket/redux/appstate.dart';
+import 'package:anipocket/redux/store.dart';
 import 'package:anipocket/redux/view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -10,7 +10,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class FabSeason extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppStateSeasonList, ViewModel>(
+    return StoreConnector<AppState, ViewModel>(
       converter: (store) {
         return ViewModel(title: store.state.title);
       }, builder: (context, viewModel) {

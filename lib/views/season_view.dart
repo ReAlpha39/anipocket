@@ -1,6 +1,5 @@
-import 'package:anipocket/redux/action_season_list.dart';
-import 'package:anipocket/redux/appstate_season_list.dart';
-import 'package:anipocket/redux/store_season_list.dart';
+import 'package:anipocket/redux/appstate.dart';
+import 'package:anipocket/redux/store.dart';
 import 'package:anipocket/redux/view_model.dart';
 import 'package:anipocket/widget/CardAnime.dart';
 import 'package:anipocket/widget/fab_season.dart';
@@ -15,7 +14,7 @@ class SeasonView extends StatelessWidget {
       appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.grey[100],
-          title: StoreConnector<AppStateSeasonList, ViewModel>(
+          title: StoreConnector<AppState, ViewModel>(
             converter: (store) {
               return ViewModel(title: store.state.title);
             },
@@ -26,7 +25,7 @@ class SeasonView extends StatelessWidget {
               );
             },
           )),
-      body: StoreConnector<AppStateSeasonList, ViewModel>(
+      body: StoreConnector<AppState, ViewModel>(
         converter: (store) {
           return ViewModel(results: store.state.seasonAnime);
         },

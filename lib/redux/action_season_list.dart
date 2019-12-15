@@ -1,6 +1,6 @@
 import 'package:anipocket/models/season/season_anime.dart';
 import 'package:anipocket/models/season/season_type.dart';
-import 'package:anipocket/redux/appstate_season_list.dart';
+import 'package:anipocket/redux/appstate.dart';
 import 'package:anipocket/repositories/jikan_api.dart';
 import 'package:intl/intl.dart';
 import 'package:redux_thunk/redux_thunk.dart';
@@ -15,7 +15,7 @@ class GotData {
   GotData({this.results, this.season, this.year});
 }
 
-ThunkAction<AppStateSeasonList> getSeasonAnime({String season}) {
+ThunkAction<AppState> getSeasonAnime({String season}) {
   DateTime _now = DateTime.now();
   String _thisMonth = DateFormat("MM").format(_now);
   int _thisYear = int.parse(DateFormat("yyyy").format(_now));

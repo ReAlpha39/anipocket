@@ -1,40 +1,40 @@
-import 'package:anipocket/redux/appstate_season_list.dart';
+import 'package:anipocket/redux/appstate.dart';
 
 
 
-AppStateSeasonList reducer(AppStateSeasonList appState, dynamic action) {
+AppState reducer(AppState appState, dynamic action) {
   switch (action.season) {
     case "Winter":
       {
-        AppStateSeasonList newAppStateSeasonList = AppStateSeasonList(title: action.season + " " + action.year, seasonAnime: action.seasonAnime);
-        return newAppStateSeasonList;
+        AppState newAppState = AppState(title: action.season + " " + action.year, seasonAnime: action.seasonAnime);
+        return newAppState;
       }
       break;
 
       case "Spring":
       {
-        AppStateSeasonList newAppStateSeasonList = AppStateSeasonList(title: action.season + " " + action.year, seasonAnime: action.seasonAnime);
-        return newAppStateSeasonList;
+        AppState newAppState = AppState(title: action.season + " " + action.year, seasonAnime: action.seasonAnime);
+        return newAppState;
       }
       break;
 
       case "Summer":
       {
-        AppStateSeasonList newAppStateSeasonList = AppStateSeasonList(title: action.season + " " + action.year, seasonAnime: action.seasonAnime);
-        return newAppStateSeasonList;
+        AppState newAppState = AppState(title: action.season + " " + action.year, seasonAnime: action.seasonAnime);
+        return newAppState;
       }
       break;
 
       case "Fall":
       {
-        AppStateSeasonList newAppStateSeasonList = AppStateSeasonList(title: action.season + " " + action.year, seasonAnime: action.seasonAnime);
-        return newAppStateSeasonList;
+        AppState newAppState = AppState(title: action.season + " " + action.year, seasonAnime: action.seasonAnime);
+        return newAppState;
       }
       break;
     default:
       {
-        AppStateSeasonList newAppStateSeasonList = AppStateSeasonList();
-        return newAppStateSeasonList;
+        AppState newAppState = AppState();
+        return newAppState;
       }
   }
 

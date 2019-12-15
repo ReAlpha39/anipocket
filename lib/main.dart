@@ -1,4 +1,4 @@
-import 'package:anipocket/redux/appstate_season_list.dart';
+import 'package:anipocket/redux/appstate.dart';
 import 'package:anipocket/redux/store_season_list.dart';
 import 'package:anipocket/views/season_view.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return StreamBuilder(
       stream: bloc.darkThemeEnabled,
       initialData: false,
-      builder: (context, snapshot) => StoreProvider<AppStateSeasonList>(
+      builder: (context, snapshot) => StoreProvider<AppState>(
         store: store,
         child: MaterialApp(
             debugShowCheckedModeBanner: false,

@@ -1,10 +1,10 @@
-import 'package:anipocket/redux/appstate_season_list.dart';
+import 'package:anipocket/redux/appstate.dart';
 import 'package:anipocket/redux/reducer_season_list.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_thunk/redux_thunk.dart';
 
-final Store<AppStateSeasonList> store = Store<AppStateSeasonList>(
+final Store<AppState> store = Store<AppState>(
   reducer,
-  initialState: AppStateSeasonList(title: 'This Season', ),
+  initialState: AppState(title: 'This Season', ),
   middleware: [thunkMiddleware]
 );

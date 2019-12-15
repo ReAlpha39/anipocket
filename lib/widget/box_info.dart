@@ -8,8 +8,14 @@ class BoxInfo extends StatefulWidget {
 class _BoxInfoState extends State<BoxInfo> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Stack(alignment: Alignment.center, children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(32),
+            color: Colors.blue,
+        ),
+      ]),
     );
   }
 }

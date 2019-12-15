@@ -12,13 +12,19 @@ class SeasonView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.grey[100],
-        title: Text(
-          'This Season',
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
+          centerTitle: true,
+          backgroundColor: Colors.grey[100],
+          title: StoreConnector<AppStateSeasonList, ViewModel>(
+            converter: (store) {
+              return ViewModel(title: store.state.title);
+            },
+            builder: (context, viewModel) {
+              return Text(
+                viewModel.title,
+                style: TextStyle(color: Colors.black),
+              );
+            },
+          )),
       body: StoreConnector<AppStateSeasonList, ViewModel>(
         converter: (store) {
           return ViewModel(results: store.state.seasonAnime);
@@ -27,25 +33,27 @@ class SeasonView extends StatelessWidget {
           print(store.state.seasonAnime);
           return Container(
             child: store.state.seasonAnime == null
-              ? Center(
-                  child: CircularProgressIndicator(),
-                )
-              : ListView.builder(
-                  itemCount: viewModel.results.anime.length,
-                  itemBuilder: (context, index) {
-                    if (viewModel.results.anime[index].r18 == false) {
-                      return CardAnime(anime: viewModel.results.anime[index]);
-                    } else {
-                      return Container();
-                    }
-                  },
-                ),
+                ? Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : ListView.builder(
+                    itemCount: viewModel.results.anime.length,
+                    itemBuilder: (context, index) {
+                      if (viewModel.results.anime[index].r18 == false) {
+                        return CardAnime(anime: viewModel.results.anime[index]);
+                      } else {
+                        return Container();
+                      }
+                    },
+                  ),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.ac_unit),
-        onPressed: () {store.dispatch(getSeasonAnime(season: 'Spring'));},
+        onPressed: () {
+          store.dispatch(getSeasonAnime(season: 'Spring'));
+        },
       ),
     );
   }

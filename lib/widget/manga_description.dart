@@ -46,6 +46,15 @@ class MangaDescription extends StatelessWidget {
                               fontSize: 20, fontStyle: FontStyle.italic),
                         ),
                       ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 10),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(color: Colors.grey[100]),
+                        child: Text(
+                          ' 1997 ' + ' Manga ' + ' Publishing ',
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                     ],
                   ),
                 ),

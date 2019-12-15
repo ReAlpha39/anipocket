@@ -24,7 +24,7 @@ class FabSeason extends StatelessWidget {
             SpeedDialChild(
               elevation: 6,
               child: Icon(FontAwesomeIcons.leaf, size: 16,),
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.deepPurpleAccent[700],
               label: 'Fall',
               labelStyle: TextStyle(fontSize: 16.0),
               onTap: () => store.dispatch(getSeasonAnime(season: 'Fall'))
@@ -32,7 +32,7 @@ class FabSeason extends StatelessWidget {
             SpeedDialChild(
               elevation: 6,
               child: Icon(Icons.wb_sunny),
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.deepPurpleAccent[700],
               label: 'Summer',
               labelStyle: TextStyle(fontSize: 16.0),
               onTap: () => store.dispatch(getSeasonAnime(season: 'Summer'))
@@ -40,7 +40,7 @@ class FabSeason extends StatelessWidget {
             SpeedDialChild(
               elevation: 6,
               child: Icon(Icons.local_florist),
-              backgroundColor: Colors.green,
+              backgroundColor: Colors.deepPurpleAccent[700],
               label: 'Spring',
               labelStyle: TextStyle(fontSize: 16),
               onTap: () => store.dispatch(getSeasonAnime(season: 'Spring'))
@@ -48,7 +48,7 @@ class FabSeason extends StatelessWidget {
             SpeedDialChild(
               elevation: 6,
               child: Icon(FontAwesomeIcons.snowflake, size: 20,),
-              backgroundColor: Colors.green,
+              backgroundColor: Colors.deepPurpleAccent[700],
               label: 'Winter',
               labelStyle: TextStyle(fontSize: 16.0),
               onTap: () => store.dispatch(getSeasonAnime(season: 'Winter'))

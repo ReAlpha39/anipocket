@@ -47,6 +47,9 @@ class _CalendarState extends State<Calendar> {
               onDaySelected: (date, events) {
                 print(date.toIso8601String());
               },
+              builders: CalendarBuilders(
+                selectedDayBuilder: (context, date, events) => Container(
+                    )),
               calendarController: _controller,
             ),
           ],

@@ -1,6 +1,7 @@
 import 'package:anipocket/widget/box_info.dart';
 import 'package:flutter/material.dart';
 
+import 'edit_profile.dart';
 import 'photo_profile.dart';
 
 class UserProfile extends StatelessWidget {
@@ -37,6 +38,14 @@ class UserProfile extends StatelessWidget {
             BoxInfo(),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          debugPrint('FAB clicked');
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return EditProfile();
+          }));
+        },
       ),
     );
   }

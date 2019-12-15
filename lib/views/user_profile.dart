@@ -46,6 +46,7 @@ class UserProfile extends StatelessWidget {
             return EditProfile();
           }));
         },
+        child: Icon(Icons.edit),
       ),
     );
   }

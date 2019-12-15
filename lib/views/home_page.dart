@@ -15,17 +15,47 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       drawer: Drawer(
-        child: ListView(
+        child: Column(
           children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text("Muhammad Miftah"),
-              accountEmail: Text("muhammadmiftah998@gmail.com"),
-              decoration: BoxDecoration(color: Colors.black87),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20),
+              color: Theme.of(context).primaryColor,
+              child: Center(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: 100,
+                      height: 100,
+                      margin: EdgeInsets.only(top : 30),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://images.wallpaperscraft.com/image/anime_face_hair_mask_85079_300x168.jpg"),
+                              fit: BoxFit.fill)),
+                    )
+                  ],
+                ),
+              ),
             ),
             ListTile(
               title: Text("First Page"),
-              leading: Icon(Icons.home, color: Colors.redAccent[700]),
-            )
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Seasonal Anime"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Setting"),
+              onTap: () {},
+            ),
+            Row(
+              children: <Widget>[
+                Text("theme"),
+              ],
+            ),
           ],
         ),
       ),
@@ -33,7 +63,6 @@ class HomePage extends StatelessWidget {
         child: Container(
           height: MediaQuery.of(context).size.height,
           child: Column(children: <Widget>[
-            
             Container(
               //padding: EdgeInsets.all(10),
               child: Expanded(
@@ -92,7 +121,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             //batesnya INI
-            
+
             Container(
               //padding: EdgeInsets.all(10),
               child: Expanded(
@@ -139,7 +168,7 @@ class HomePage extends StatelessWidget {
                                 itemCount: 10,
                                 itemBuilder: (context, index) {
                                   return ListTopAnime(
-                                    listanime :snapshot.data.top[index],
+                                    listanime: snapshot.data.top[index],
                                   );
                                 },
                               );
@@ -150,7 +179,6 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            
           ] //snd
               ),
         ),
@@ -158,7 +186,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 
 class MinCardAnime extends StatefulWidget {
   final Top topAnime;
@@ -218,7 +245,7 @@ class _CardAnimeState extends State<MinCardAnime> {
 class ListTopAnime extends StatefulWidget {
   final Top listanime;
 
-  const ListTopAnime ({this.listanime});
+  const ListTopAnime({this.listanime});
   @override
   _ListTopAnimeState createState() => _ListTopAnimeState();
 }
@@ -269,4 +296,3 @@ class _ListTopAnimeState extends State<ListTopAnime> {
     );
   }
 }
-

@@ -3,6 +3,10 @@ import 'package:anipocket/models/request_type/request_type.dart';
 import 'package:anipocket/repositories/jikan_api.dart';
 import 'package:flutter/material.dart';
 
+import '../models/season/season_anime.dart';
+import 'season_view.dart';
+import 'top_anime_view.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -49,11 +53,15 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(
               title: Text("Top Anime"),
-              onTap: () {},
+              onTap: () {
+                     Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => TopAnimeView()));}
             ),
             ListTile(
               title: Text("Seasonal Anime"),
-              onTap: () {},
+              onTap: () {
+                     Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SeasonView()));},
             ),
             ListTile(
               title: Text("Setting"),

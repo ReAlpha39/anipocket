@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:anipocket/widget/bloc.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
+import 'views/home_page.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: snapshot.data ? ThemeData.dark() : ThemeData.light(),
-            home: SeasonView()),
+            home: HomePage())
       ),
     );
   }

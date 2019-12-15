@@ -9,20 +9,20 @@ class Calendar extends StatefulWidget {
 class _CalendarState extends State<Calendar> {
   CalendarController _controller;
 
-@override
-void initState() {
-  super.initState();
-  _controller = CalendarController();
-}
+  @override
+  void initState() {
+    super.initState();
+    _controller = CalendarController();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Upcoming Anime Calendar'),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
+        appBar: AppBar(
+          title: Text('Upcoming Anime Calendar'),
+        ),
+        body: SingleChildScrollView(
+            child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             TableCalendar(
@@ -34,7 +34,15 @@ void initState() {
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0,
                       color: Colors.white)),
-            )],
-    )));
+              headerStyle: HeaderStyle(
+                centerHeaderTitle: true,
+                formatButtonDecoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+              ),
+            ),
+          ],
+        )));
   }
 }

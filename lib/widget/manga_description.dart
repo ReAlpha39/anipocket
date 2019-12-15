@@ -99,6 +99,26 @@ class MangaDescription extends StatelessWidget {
             ],
           ),
         ),
+              Container(
+        padding: const EdgeInsets.all(20),
+        decoration:
+            BoxDecoration(color: Colors.grey[100], shape: BoxShape.rectangle),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                child: Text(
+                  'Action - Adventure - Comedy - Fantasy - Shounen - Super Power',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(fontSize: 14),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       ],
     );
   }

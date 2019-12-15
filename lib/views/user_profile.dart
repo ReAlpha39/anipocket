@@ -18,6 +18,21 @@ class UserProfile extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: 50),
             PhotoProfile(),
+            Stack(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 10.0),
+                  child: Text(
+                    'Mawang',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w800),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

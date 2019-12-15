@@ -54,7 +54,10 @@ class _CalendarState extends State<Calendar> {
                         decoration: BoxDecoration(
                             color: Theme.of(context).primaryColor,
                             borderRadius: BorderRadius.circular(10.0)),
-                      )),
+                      child: Text(
+                      date.day.toString(),
+                      style: TextStyle(color: Colors.white),
+                    ))),
               calendarController: _controller,
             ),
           ],

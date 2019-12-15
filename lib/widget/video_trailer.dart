@@ -52,6 +52,8 @@ class _VideoTrailerState extends State<VideoTrailer> {
               _controller.reload();
             },
           );
+        } else {
+          return CircularProgressIndicator();
         }
       },
     );

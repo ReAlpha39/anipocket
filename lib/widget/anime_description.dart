@@ -99,6 +99,26 @@ class AnimeDescription extends StatelessWidget {
             ],
           ),
         ),
+        Container(
+          padding: const EdgeInsets.all(20),
+          decoration:
+              BoxDecoration(color: Colors.grey[100], shape: BoxShape.rectangle),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  child: Text(
+                    'Action - Game - Adventure - Fantasy - Romance',
+                    textAlign: TextAlign.center,
+                    overflow: TextOverflow.clip,
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

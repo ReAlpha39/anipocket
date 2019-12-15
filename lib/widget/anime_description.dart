@@ -54,6 +54,29 @@ class AnimeDescription extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
+                                        Container(
+                      height: 30,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(left: 28),
+                            child: Text(
+                              'Add to Watchlist',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    ),
                     ],
                   ),
                 ),

@@ -17,7 +17,10 @@ void initState() {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Upcoming Anime Calendar'),
+      ),
       
     );
   }

@@ -78,6 +78,37 @@ class _BoxInfoState extends State<BoxInfo> {
                   )
                 ],
               ),
+              Column(
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.star,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(
+                        width: 4,
+                      ),
+                      Text(
+                        "99",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 24),
+                      )
+                    ],
+                  ),
+                  Text(
+                    "Favorit Songs",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15),
+                  )
+                ],
+              ),
             ],
           ),
         ),

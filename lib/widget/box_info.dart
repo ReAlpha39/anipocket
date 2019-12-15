@@ -15,6 +15,7 @@ class _BoxInfoState extends State<BoxInfo> {
           padding: EdgeInsets.all(32),
           color: Colors.blue,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Column(
                 children: <Widget>[

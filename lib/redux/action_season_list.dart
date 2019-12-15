@@ -51,7 +51,7 @@ ThunkAction<AppStateSeasonList> getSeasonAnime({String season}) {
             _year = _thisYear;
           }
           store.dispatch(GotData(
-            results: await jikanApi.getSeasonAnime(_year, SeasonType.WINTER),
+            results: await jikanApi.getSeasonAnime(year: _year, seasonType:  SeasonType.WINTER),
             season: season,
             year: _year.toString()
           ));
@@ -67,7 +67,7 @@ ThunkAction<AppStateSeasonList> getSeasonAnime({String season}) {
             _year = _thisYear;
           }
           store.dispatch(GotData(
-            results: await jikanApi.getSeasonAnime(_year, SeasonType.SPRING),
+            results: await jikanApi.getSeasonAnime(year: _year, seasonType:  SeasonType.SPRING),
             season: season,
             year: _year.toString()
           ));
@@ -83,7 +83,7 @@ ThunkAction<AppStateSeasonList> getSeasonAnime({String season}) {
             _year = _thisYear;
           }
           store.dispatch(GotData(
-            results: await jikanApi.getSeasonAnime(_year, SeasonType.SUMMER),
+            results: await jikanApi.getSeasonAnime(year: _year, seasonType: SeasonType.SUMMER),
             season: season,
             year: _year.toString()
           ));
@@ -99,7 +99,7 @@ ThunkAction<AppStateSeasonList> getSeasonAnime({String season}) {
             _year = _thisYear;
           }
           store.dispatch(GotData(
-            results: await jikanApi.getSeasonAnime(_year, SeasonType.FALL),
+            results: await jikanApi.getSeasonAnime(year:_year, seasonType: SeasonType.FALL),
             season: season,
             year: _year.toString()
           ));
@@ -108,7 +108,7 @@ ThunkAction<AppStateSeasonList> getSeasonAnime({String season}) {
       default:
         {
           store.dispatch(GotData(
-            results: await jikanApi.getSeasonAnime(_thisYear, _seasonType)
+            results: await jikanApi.getSeasonAnime(year:_thisYear, seasonType: _seasonType)
           ));
         }
     }

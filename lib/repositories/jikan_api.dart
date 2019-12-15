@@ -26,8 +26,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = Tops.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -40,8 +40,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = AnimeInfo.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -54,8 +54,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = Episodes.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -68,8 +68,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = News.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -82,8 +82,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = News.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -96,8 +96,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = News.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -110,8 +110,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = News.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -124,8 +124,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = News.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -138,8 +138,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = CharactersStaff.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -152,8 +152,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = MangaInfo.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -166,8 +166,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = CharactersStaff.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -180,8 +180,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = News.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -194,8 +194,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = Pictures.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -208,8 +208,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = Stats.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -222,22 +222,25 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = Recommendations.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
 
-  Future<SeasonAnime> getSeasonAnime(int year, SeasonType seasonType) async {
-    var url = baseUrl + '/season/$year/${seasonTypeValues.reverse[seasonType].toLowerCase()}';
+  Future<SeasonAnime> getSeasonAnime({int year, SeasonType seasonType}) async {
+    var url = baseUrl + '/season';
+    if (year != null && seasonType != null) {
+      url += '/$year/${seasonTypeValues.reverse[seasonType].toLowerCase()}';
+    }
     var output;
     try {
       var response = await http.get(url);
       if (response.statusCode == 200) {
         output = SeasonAnime.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -250,8 +253,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = SeasonLater.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -264,8 +267,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = SeasonArchive.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }
@@ -278,8 +281,8 @@ class JikanApi {
       if (response.statusCode == 200) {
         output = AnimeSchedule.fromRawJson(response.body);
       }
-    } on SocketException{
-      throw Exception('Connection Error');
+    } catch (e) {
+      print(e);
     }
     return output;
   }

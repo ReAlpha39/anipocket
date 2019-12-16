@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../models/season/season_anime.dart';
 import 'season_view.dart';
 import 'top_anime_view.dart';
+import 'package:anipocket/views/pop-up_logout.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -52,16 +53,17 @@ class HomePage extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: Text("Top Anime"),
-              onTap: () {
-                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => TopAnimeView()));}
-            ),
+                title: Text("Top Anime"),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TopAnimeView()));
+                }),
             ListTile(
               title: Text("Seasonal Anime"),
               onTap: () {
-                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SeasonView()));},
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SeasonView()));
+              },
             ),
             ListTile(
               title: Text("Setting"),
@@ -73,6 +75,13 @@ class HomePage extends StatelessWidget {
                 value: false,
                 onChanged: (chnageTheme) {},
               ),
+            ),
+            ListTile(
+              title: Text("Logout"),
+              onTap: () async {
+                final action = await Dialogs.yesAbortDialog(
+                    context, 'Logout', 'Apakah anda yakin ingin logout?');
+              },
             )
           ],
         ),

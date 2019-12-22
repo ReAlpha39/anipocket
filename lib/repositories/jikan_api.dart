@@ -7,6 +7,7 @@ import 'package:anipocket/models/season/season_anime.dart';
 import 'package:anipocket/models/season/season_archive.dart';
 import 'package:anipocket/models/season/season_later.dart';
 import 'package:anipocket/models/season/season_type.dart';
+import 'package:anipocket/models/type.dart';
 import 'package:http/http.dart' as http;
 import 'package:anipocket/models/models.dart';
 import 'package:anipocket/models/request_type/request_type.dart';
@@ -33,11 +34,15 @@ class JikanApi {
     return output;
   }
 
-  Future<Results> getResults({String queries}) async {
+  Future<Results> getResults({String queries, Type type}) async {
     var url = baseUrl + '/search/anime?';
     if (queries != null) {
       var query = queries.replaceAll(" ", "+");
-      url += query;
+      url += "q=" + query;
+    }
+    if (type != null) {
+      String typeToString = typeValues.reverseMap[type];
+      url += "type=" + typeToString;
     }
     var output;
     try {

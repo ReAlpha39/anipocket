@@ -66,7 +66,7 @@ class CardAnime extends StatelessWidget {
                             width: double.infinity,
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
-                              child: Text(anime.title),
+                              child: Text(anime.title.toString() == 'null' ? 'Unknown' : anime.title),
                             ),
                           ),
                           Container(

@@ -77,7 +77,7 @@ class CardAnime extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
                                 Text(
-                                  typeValues.reverse[anime.type],
+                                  typeValues.reverse[anime.type].toString() == 'null' ? 'Unknown' : typeValues.reverseMap[anime.type] ,
                                   style: TextStyle(fontSize: 12),
                                 ),
                                 Text(anime.score.toString() == 'null' ? 'No score available':anime.score.toString(),

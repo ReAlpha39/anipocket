@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:anipocket/models/genre/genre_id.dart';
 import 'package:anipocket/models/schedule/anime_schedule.dart';
 import 'package:anipocket/models/schedule/list_day.dart';
 import 'package:anipocket/models/search/results.dart';
@@ -34,7 +35,7 @@ class JikanApi {
     return output;
   }
 
-  Future<Results> getResults({String queries, Type type}) async {
+  Future<Results> getResults({String queries, Type type, GenreId genre}) async {
     var url = baseUrl + '/search/anime?';
     if (queries != null) {
       var query = queries.replaceAll(" ", "+");
@@ -43,6 +44,10 @@ class JikanApi {
     if (type != null) {
       String typeToString = typeValues.reverseMap[type];
       url += "type=" + typeToString;
+    }
+    if (genre != null) {
+      String genreToString = GenreId.values(genre);
+      url += "genre=" + genreToString;
     }
     var output;
     try {

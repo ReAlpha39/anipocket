@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:anipocket/models/schedule/anime_schedule.dart';
 import 'package:anipocket/models/schedule/list_day.dart';
+import 'package:anipocket/models/search/results.dart';
 import 'package:anipocket/models/season/season_anime.dart';
 import 'package:anipocket/models/season/season_archive.dart';
 import 'package:anipocket/models/season/season_later.dart';
@@ -29,6 +30,24 @@ class JikanApi {
     } catch (e) {
       print(e);
     }
+    return output;
+  }
+
+  Future<Results> getResults({String queries}) async {
+    var url = baseUrl + '/search/anime?';
+    if (queries != null) {
+      var query = queries.replaceAll(" ", "+");
+      url += query;
+    }
+    var output;
+    try {
+      var response = await http.get(url);
+      if (response.statusCode == 200) {
+        output = Results.fromRawJson(response.body);
+      } 
+    } catch (e) {
+      print(e);
+    } 
     return output;
   }
 

@@ -1,4 +1,3 @@
-import 'package:anipocket/models/models.dart';
 import 'package:anipocket/widget/menu.dart';
 import 'package:anipocket/widget/preview_list_top.dart';
 import 'package:anipocket/widget/preview_most_popular.dart';
@@ -18,7 +17,6 @@ class HomePage extends StatelessWidget {
       drawer: Menu(),
       body: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height,
           child: Column(
             children: <Widget>[
               PreviewMostPopular(),

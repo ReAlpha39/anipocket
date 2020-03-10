@@ -28,17 +28,22 @@ class CardAnime extends StatelessWidget {
               borderRadius: BorderRadius.circular(4), color: Colors.white),
           child: Row(
             children: <Widget>[
-              Container(
-                height: 220,
-                width: 150,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(4),
-                      bottomLeft: Radius.circular(4),
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(4),
+                  bottomLeft: Radius.circular(4),
+                ),
+                child: Image.network(
+                      anime.imageUrl,
+                      height: 220,
+                      width: 150,
+                      loadingBuilder: (context, child, progress) {
+                        return progress == null
+                          ? child
+                          : LinearProgressIndicator();
+                      }, 
+                      fit: BoxFit.cover,
                     ),
-                    image: DecorationImage(
-                        image: NetworkImage(anime.imageUrl),
-                        fit: BoxFit.cover)),
               ),
               Expanded(
                 child: Container(

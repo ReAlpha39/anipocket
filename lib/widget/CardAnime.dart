@@ -9,23 +9,13 @@ class CardAnime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String genre = '';
-    if (anime.genres.length < 4) {
-      for (int i = 0; i < anime.genres.length; i++) {
-        if (anime.genres.length == i + 1) {
+    for (int i = 0; i < anime.genres.length; i++) {
+        if (anime.genres.length -1 == i) {
           genre += anime.genres[i].name;
         } else {
           genre += anime.genres[i].name + ' • ';
         }
       }
-    } else {
-      for (int i = 0; i < 3; i++) {
-        if (2 == i) {
-          genre += anime.genres[i].name;
-        } else {
-          genre += anime.genres[i].name + ' • ';
-        }
-      }
-    }
 
     return Padding(
       padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
@@ -84,32 +74,37 @@ class CardAnime extends StatelessWidget {
                                     style: TextStyle(fontSize: 12))
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
+                      Expanded(
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: 4,
+                              right: 4,
+                              top: 8,
+                              bottom: 8
+                            ),
+                            child: SingleChildScrollView(child: Text(anime.synopsis, style: TextStyle(fontSize: 12),)),
+                          ),
+                        ),
+                      ),
                       Container(
-                        padding: EdgeInsets.only(top: 6, bottom: 6),
                         width: double.infinity,
+                        padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                             color: Colors.grey[100],
                             borderRadius: BorderRadius.only(
                                 bottomRight: Radius.circular(4))),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Text(
-                              genre,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(fontSize: 12),
+                        child: Text(
+                              '$genre',
+                              overflow: TextOverflow.clip,
+                              maxLines: 2,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 12, wordSpacing: 2),
                             ),
-                            // IconButton(
-                            //   //padding: EdgeInsets.all(4),
-                            //   iconSize: 16,
-                            //   icon: Icon(Icons.add_circle_outline),
-                            //   onPressed: () {},
-                            // ),
-                          ],
-                        ),
                       )
                     ],
                   ),

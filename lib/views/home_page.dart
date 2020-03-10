@@ -1,12 +1,8 @@
 import 'package:anipocket/models/models.dart';
 import 'package:anipocket/models/request_type/request_type.dart';
 import 'package:anipocket/repositories/jikan_api.dart';
+import 'package:anipocket/widget/menu.dart';
 import 'package:flutter/material.dart';
-
-import '../models/season/season_anime.dart';
-import 'season_view.dart';
-import 'top_anime_view.dart';
-import 'package:anipocket/views/pop-up_logout.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -19,73 +15,7 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(20),
-              color: Theme.of(context).primaryColor,
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      width: 100,
-                      height: 100,
-                      margin: EdgeInsets.only(top: 30, bottom: 10),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                  "https://images.wallpaperscraft.com/image/anime_face_hair_mask_85079_300x168.jpg"),
-                              fit: BoxFit.fill)),
-                    ),
-                    Text(
-                      "Muhammad Miftah",
-                      style: TextStyle(fontSize: 22, color: Colors.white),
-                    ),
-                    Text(
-                      "muhammadmiftah998@gmail.com",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-                title: Text("Top Anime"),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TopAnimeView()));
-                }),
-            ListTile(
-              title: Text("Seasonal Anime"),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SeasonView()));
-              },
-            ),
-            ListTile(
-              title: Text("Setting"),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Dark Theme"),
-              trailing: Switch(
-                value: false,
-                onChanged: (chnageTheme) {},
-              ),
-            ),
-            ListTile(
-              title: Text("Logout"),
-              onTap: () async {
-                final action = await Dialogs.yesAbortDialog(
-                    context, 'Logout', 'Apakah anda yakin ingin logout?');
-              },
-            )
-          ],
-        ),
-      ),
+      drawer: Menu(),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,

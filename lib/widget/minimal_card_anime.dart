@@ -1,48 +1,15 @@
 import 'package:anipocket/models/models.dart';
-import 'package:anipocket/models/request_type/request_type.dart';
-import 'package:anipocket/repositories/jikan_api.dart';
-import 'package:anipocket/widget/menu.dart';
-import 'package:anipocket/widget/preview_list_top.dart';
-import 'package:anipocket/widget/preview_most_popular.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class MinCardAnime extends StatefulWidget {
+  final Top topAnime;
+
+  const MinCardAnime({this.topAnime});
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('AniPocket', style: TextStyle(color: Colors.black)),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
-      ),
-      drawer: Menu(),
-      body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          child: Column(children: <Widget>[
-            PreviewMostPopular(),
-            PreviewListTop()
-          ] //snd
-              ),
-        ),
-      ),
-    );
-  }
+  _CardAnimeState createState() => _CardAnimeState();
 }
 
-
-
-class ListTopAnime extends StatefulWidget {
-  final Top listanime;
-
-  const ListTopAnime({this.listanime});
-  @override
-  _ListTopAnimeState createState() => _ListTopAnimeState();
-}
-
-class _ListTopAnimeState extends State<ListTopAnime> {
+class _CardAnimeState extends State<MinCardAnime> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,7 +25,7 @@ class _ListTopAnimeState extends State<ListTopAnime> {
             //width: 150,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage(widget.listanime.imageUrl),
+                    image: NetworkImage(widget.topAnime.imageUrl),
                     fit: BoxFit.fill),
                 boxShadow: [
                   BoxShadow(
@@ -79,7 +46,7 @@ class _ListTopAnimeState extends State<ListTopAnime> {
             padding: const EdgeInsets.all(4),
             child: Center(
                 child: Text(
-              widget.listanime.title,
+              widget.topAnime.title,
               overflow: TextOverflow.ellipsis,
             )),
           ),

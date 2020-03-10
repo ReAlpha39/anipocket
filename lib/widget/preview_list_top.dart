@@ -2,6 +2,7 @@ import 'package:anipocket/models/models.dart';
 import 'package:anipocket/models/request_type/tops.dart';
 import 'package:anipocket/repositories/jikan_api.dart';
 import 'package:anipocket/views/home_page.dart';
+import 'package:anipocket/widget/minimal_card_anime.dart';
 import 'package:flutter/material.dart';
 
 class PreviewListTop extends StatelessWidget {
@@ -52,8 +53,8 @@ class PreviewListTop extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         itemCount: 10,
                         itemBuilder: (context, index) {
-                          return ListTopAnime(
-                            listanime: snapshot.data.top[index],
+                          return MinCardAnime(
+                            topAnime: snapshot.data.top[index],
                           );
                         },
                       );

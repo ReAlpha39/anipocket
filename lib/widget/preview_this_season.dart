@@ -85,7 +85,12 @@ class _PreviewThisSeasonState extends State<PreviewThisSeason> {
   }
 
   Widget buildLoading() {
-    return Center(child: LinearProgressIndicator());
+    return Container(
+      height: 300,
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
   }
 
   Widget buildListAnime(SeasonAnime seasonAnime) {
@@ -104,8 +109,11 @@ class _PreviewThisSeasonState extends State<PreviewThisSeason> {
   }
 
   Widget buildError(String message) {
-    return Center(
-      child: CircularProgressIndicator()
+    return Container(
+      height: 300,
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
     );
   }
 }

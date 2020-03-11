@@ -84,7 +84,12 @@ class _PreviewMostPopularState extends State<PreviewMostPopular> {
   }
 
   Widget buildLoading() {
-    return Center(child: LinearProgressIndicator());
+    return Container(
+      height: 300,
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
   }
 
   Widget buildListAnime(Tops tops) {
@@ -103,8 +108,11 @@ class _PreviewMostPopularState extends State<PreviewMostPopular> {
   }
 
   Widget buildError(String message) {
-    return Center(
-      child: CircularProgressIndicator()
+    return Container(
+      height: 300,
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
     );
   }
 }

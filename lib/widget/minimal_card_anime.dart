@@ -29,17 +29,28 @@ class MinCardAnime extends StatelessWidget {
         children: <Widget>[
           Container(
             height: 230,
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+              child: Image.network(
+                imageUrl,
+                loadingBuilder: (context, child, progress) {
+                  return progress == null
+                    ? child
+                    : LinearProgressIndicator();
+                },
+                fit: BoxFit.cover,
+              ),
+            ),
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(imageUrl), fit: BoxFit.fill),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 10,
-                      spreadRadius: 2,
-                      offset: Offset(3, 3))
-                ],
-                borderRadius: BorderRadius.all(Radius.circular(8))),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey[400],
+                  blurRadius: 7,
+                  spreadRadius: 1,
+                  offset: Offset(1, 1)
+                )
+              ]
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(4),

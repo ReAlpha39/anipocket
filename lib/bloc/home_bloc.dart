@@ -21,10 +21,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       yield HomeLoading();
       try {
         final tops = await jikanApi.getTop(TopType.anime);
+        final seasonAnime = await jikanApi.getSeasonAnime();
         if (tops == null) {
           yield HomeError(message: "Connection Error");
         } else {
-          yield HomeLoaded(tops: tops);
+          yield HomeLoaded(tops: tops, seasonAnime: seasonAnime);
         }
       } catch (e) {}
     }

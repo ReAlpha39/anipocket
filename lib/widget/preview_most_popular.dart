@@ -1,14 +1,29 @@
-import 'package:anipocket/models/models.dart';
+import 'package:anipocket/bloc/home_bloc.dart';
+import 'package:anipocket/bloc/home_event.dart';
+import 'package:anipocket/bloc/home_state.dart';
 import 'package:anipocket/models/request_type/tops.dart';
-import 'package:anipocket/repositories/jikan_api.dart';
 import 'package:anipocket/widget/minimal_card_anime.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class PreviewMostPopular extends StatelessWidget {
+class PreviewMostPopular extends StatefulWidget {
+  @override
+  _PreviewMostPopularState createState() => _PreviewMostPopularState();
+}
+
+class _PreviewMostPopularState extends State<PreviewMostPopular> {
+  HomeBloc homeBloc;
+
+  @override
+  void initState() {
+    super.initState();
+    homeBloc = BlocProvider.of<HomeBloc>(context);
+    homeBloc.add(FetchData());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      //padding: EdgeInsets.all(10),
       child: Column(
         children: <Widget>[
           Align(
@@ -39,28 +54,57 @@ class PreviewMostPopular extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: 300,
-            child: FutureBuilder<Tops>(
-                future: JikanApi().getTop(TopType.anime),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData == false) {
-                    return Container();
-                  } else {
-                    return ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return MinCardAnime(
-                          topAnime: snapshot.data.top[index],
-                        );
-                      },
-                    );
-                  }
-                }),
+          BlocListener<HomeBloc, HomeState>(
+            listener: (context, state) {
+              if (state is HomeError) {
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(content: Text(state.message),)
+                );
+              }
+            },
+            child: BlocBuilder<HomeBloc, HomeState>(
+              builder: (context, state) {
+                if (state is HomeInitial) {
+                  return buildLoading();
+                } else if (state is HomeLoading) {
+                  return buildLoading();
+                } else if (state is HomeLoaded) {
+                  return buildListAnime(state.tops);
+                } else if (state is HomeError) {
+                  return buildError(state.message);
+                } else {
+                  return Container();
+                }
+              },
+            ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildLoading() {
+    return Center(child: LinearProgressIndicator());
+  }
+
+  Widget buildListAnime(Tops tops) {
+    return Container(
+      height: 300,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return MinCardAnime(
+            topAnime: tops.top[index],
+          );
+        },
+      )
+    );
+  }
+
+  Widget buildError(String message) {
+    return Center(
+      child: CircularProgressIndicator()
     );
   }
 }

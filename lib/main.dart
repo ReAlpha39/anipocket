@@ -1,4 +1,6 @@
 import 'package:anipocket/bloc/home_bloc.dart';
+import 'package:anipocket/bloc/theme_bloc.dart';
+import 'package:anipocket/bloc/theme_state.dart';
 import 'package:anipocket/redux/appstate.dart';
 import 'package:anipocket/redux/store.dart';
 import 'package:anipocket/repositories/jikan_api.dart';
@@ -13,17 +15,29 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) {
-        return HomeBloc(jikanApi: JikanApi());
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<HomeBloc>(
+          create: (context) => HomeBloc(jikanApi: JikanApi())
+        ),
+        BlocProvider<ThemeBloc>(
+          create: (context) => ThemeBloc(),
+        )
+      ],
       child: StoreProvider<AppState>(
         store: store,
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: HomePage()
+        child: BlocBuilder<ThemeBloc, ThemeState>(
+          builder: _buildWithTheme
         )
       ),
+    );
+  }
+
+  Widget _buildWithTheme(BuildContext context, ThemeState state) {
+    return MaterialApp(
+      theme: state.themeData,
+      debugShowCheckedModeBanner: false,
+      home: HomePage()
     );
   }
 }

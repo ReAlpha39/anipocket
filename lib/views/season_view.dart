@@ -10,10 +10,8 @@ class SeasonView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.grey[100],
           title: StoreConnector<AppState, ViewModel>(
             converter: (store) {
               return ViewModel(title: store.state.title);
@@ -21,7 +19,7 @@ class SeasonView extends StatelessWidget {
             builder: (context, viewModel) {
               return Text(
                 viewModel.title,
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Colors.white),
               );
             },
           )),

@@ -1,6 +1,8 @@
+import 'package:anipocket/bloc/theme_bloc.dart';
 import 'package:anipocket/models/season/anime.dart';
 import 'package:anipocket/models/type.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CardAnime extends StatelessWidget {
   final Anime anime;
@@ -16,6 +18,7 @@ class CardAnime extends StatelessWidget {
           genre += anime.genres[i].name + ' • ';
         }
       }
+    bool isDark = BlocProvider.of<ThemeBloc>(context).state.isDark;
 
     return Padding(
       padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
@@ -25,7 +28,9 @@ class CardAnime extends StatelessWidget {
           constraints:
               BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4), color: Colors.white),
+              borderRadius: BorderRadius.circular(4),
+              color: isDark ? Colors.grey[800] : Colors.white
+          ),
           child: Row(
             children: <Widget>[
               Container(
@@ -42,7 +47,7 @@ class CardAnime extends StatelessWidget {
                           return progress == null
                             ? child
                             : LinearProgressIndicator();
-                        }, 
+                        },
                         fit: BoxFit.cover,
                       ),
                 ),
@@ -69,7 +74,7 @@ class CardAnime extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.only(top: 6, bottom: 6),
                             width: double.infinity,
-                            color: Colors.grey[100],
+                            color: isDark ? Colors.grey[700] : Colors.grey[100],
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
@@ -102,7 +107,7 @@ class CardAnime extends StatelessWidget {
                         width: double.infinity,
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                            color: Colors.grey[100],
+                            color: isDark ? Colors.grey[800] : Colors.grey[100],
                             borderRadius: BorderRadius.only(
                                 bottomRight: Radius.circular(4))),
                         child: Text(

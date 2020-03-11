@@ -9,10 +9,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('AniPocket', style: TextStyle(color: Colors.black)),
+        title: Text('AniPocket', style: TextStyle(color: Colors.white)),
         centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 7, 48, 66)
       ),
       drawer: Menu(),
       body: SingleChildScrollView(

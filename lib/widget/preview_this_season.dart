@@ -6,6 +6,7 @@ import 'package:anipocket/models/season/season_anime.dart';
 import 'package:anipocket/widget/minimal_card_anime.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PreviewThisSeason extends StatefulWidget {
   @override
@@ -36,18 +37,20 @@ class _PreviewThisSeasonState extends State<PreviewThisSeason> {
                 children: <Widget>[
                   Text(
                     "This Season",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400),
+                    style: GoogleFonts.raleway(
+                          textStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400)),
                   ),
                   FlatButton(
                     child: Text(
                       "View All",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400),
+                      style: GoogleFonts.raleway(
+                          textStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400)),
                     ),
                     onPressed: () {},
                   )

@@ -4,6 +4,7 @@ import 'package:anipocket/bloc/home_state.dart';
 import 'package:anipocket/models/request_type/tops.dart';
 import 'package:anipocket/widget/minimal_card_anime.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PreviewMostPopular extends StatefulWidget {
@@ -33,20 +34,20 @@ class _PreviewMostPopularState extends State<PreviewMostPopular> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    "Most Populer",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400),
-                  ),
+                  Text("Most Populer",
+                      style: GoogleFonts.raleway(
+                          textStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400))),
                   FlatButton(
                     child: Text(
                       "View All",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400),
+                      style: GoogleFonts.raleway(
+                          textStyle: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400)),
                     ),
                     onPressed: () {},
                   )
@@ -57,9 +58,9 @@ class _PreviewMostPopularState extends State<PreviewMostPopular> {
           BlocListener<HomeBloc, HomeState>(
             listener: (context, state) {
               if (state is HomeError) {
-                Scaffold.of(context).showSnackBar(
-                  SnackBar(content: Text(state.message),)
-                );
+                Scaffold.of(context).showSnackBar(SnackBar(
+                  content: Text(state.message),
+                ));
               }
             },
             child: BlocBuilder<HomeBloc, HomeState>(
@@ -94,17 +95,16 @@ class _PreviewMostPopularState extends State<PreviewMostPopular> {
 
   Widget buildListAnime(Tops tops) {
     return Container(
-      height: 300,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return MinCardAnime(
-            topAnime: tops.top[index],
-          );
-        },
-      )
-    );
+        height: 300,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return MinCardAnime(
+              topAnime: tops.top[index],
+            );
+          },
+        ));
   }
 
   Widget buildError(String message) {

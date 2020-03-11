@@ -1,6 +1,7 @@
 import 'package:anipocket/models/models.dart';
 import 'package:anipocket/models/season/anime.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MinCardAnime extends StatelessWidget {
   final Top topAnime;
@@ -57,6 +58,7 @@ class MinCardAnime extends StatelessWidget {
             child: Center(
                 child: Text(
               title,
+              style: GoogleFonts.raleway(),
               overflow: TextOverflow.ellipsis,
             )),
           ),

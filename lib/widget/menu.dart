@@ -1,3 +1,5 @@
+import 'package:anipocket/redux/action.dart';
+import 'package:anipocket/redux/store.dart';
 import 'package:anipocket/views/pop-up_logout.dart';
 import 'package:anipocket/views/season_view.dart';
 import 'package:anipocket/views/top_anime_view.dart';
@@ -48,6 +50,7 @@ class Menu extends StatelessWidget {
           ListTile(
             title: Text("Seasonal Anime"),
             onTap: () {
+              store.dispatch(getSeasonAnime());
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SeasonView()));
             },

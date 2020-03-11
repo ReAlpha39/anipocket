@@ -33,7 +33,7 @@ AppState reducer(AppState appState, dynamic action) {
       break;
     default:
       {
-        AppState newAppState = AppState();
+        AppState newAppState = AppState(title: "This Season", seasonAnime: action.seasonAnime);
         return newAppState;
       }
   }

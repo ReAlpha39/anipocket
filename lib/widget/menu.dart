@@ -1,11 +1,22 @@
+import 'package:anipocket/app_theme.dart';
+import 'package:anipocket/bloc/theme_bloc.dart';
+import 'package:anipocket/bloc/theme_event.dart';
 import 'package:anipocket/redux/action.dart';
 import 'package:anipocket/redux/store.dart';
 import 'package:anipocket/views/pop-up_logout.dart';
 import 'package:anipocket/views/season_view.dart';
 import 'package:anipocket/views/top_anime_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Menu extends StatelessWidget {
+class Menu extends StatefulWidget {
+  @override
+  _MenuState createState() => _MenuState();
+}
+
+class _MenuState extends State<Menu> {
+  bool isSwitched = false;
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -14,7 +25,7 @@ class Menu extends StatelessWidget {
           Container(
             width: double.infinity,
             padding: EdgeInsets.all(20),
-            color: Theme.of(context).primaryColor,
+            color: Color.fromARGB(255, 7, 48, 66),
             child: Center(
               child: Column(
                 children: <Widget>[
@@ -62,9 +73,20 @@ class Menu extends StatelessWidget {
           ListTile(
             title: Text("Dark Theme"),
             trailing: Switch(
-              value: false,
-              onChanged: (chnageTheme) {},
-            ),
+                value: isSwitched,
+                onChanged: (value) {
+                  isSwitched = value;
+                  print(value);
+                  setState(() {});
+                  if (value == true) {
+                    BlocProvider.of<ThemeBloc>(context)
+                    .add(ThemeChanged(theme: AppTheme.DarkTheme));
+                  } else {
+                    BlocProvider.of<ThemeBloc>(context)
+                    .add(ThemeChanged(theme: AppTheme.LightTheme));
+                  }
+                },
+              ),
           ),
           ListTile(
             title: Text("Logout"),

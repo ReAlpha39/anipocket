@@ -6,9 +6,10 @@ abstract class ThemeEvent extends Equatable {}
 
 class ThemeChanged extends ThemeEvent {
   final AppTheme theme;
+  final bool isDark;
 
   ThemeChanged({
-    @required this.theme
+    @required this.theme, @required this.isDark
   });
 
   @override

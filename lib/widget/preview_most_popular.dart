@@ -37,7 +37,6 @@ class _PreviewMostPopularState extends State<PreviewMostPopular> {
                   Text("Most Populer",
                       style: GoogleFonts.raleway(
                           textStyle: TextStyle(
-                              color: Colors.black,
                               fontSize: 18,
                               fontWeight: FontWeight.w400))),
                   FlatButton(
@@ -45,7 +44,6 @@ class _PreviewMostPopularState extends State<PreviewMostPopular> {
                       "View All",
                       style: GoogleFonts.raleway(
                           textStyle: TextStyle(
-                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w400)),
                     ),

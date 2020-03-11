@@ -39,7 +39,6 @@ class _PreviewThisSeasonState extends State<PreviewThisSeason> {
                     "This Season",
                     style: GoogleFonts.raleway(
                           textStyle: TextStyle(
-                              color: Colors.black,
                               fontSize: 18,
                               fontWeight: FontWeight.w400)),
                   ),
@@ -48,7 +47,6 @@ class _PreviewThisSeasonState extends State<PreviewThisSeason> {
                       "View All",
                       style: GoogleFonts.raleway(
                           textStyle: TextStyle(
-                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w400)),
                     ),

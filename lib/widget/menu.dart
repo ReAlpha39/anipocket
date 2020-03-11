@@ -9,12 +9,8 @@ import 'package:anipocket/views/top_anime_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Menu extends StatefulWidget {
-  @override
-  _MenuState createState() => _MenuState();
-}
 
-class _MenuState extends State<Menu> {
+class Menu extends StatelessWidget {
   bool isSwitched = false;
 
   @override
@@ -73,17 +69,14 @@ class _MenuState extends State<Menu> {
           ListTile(
             title: Text("Dark Theme"),
             trailing: Switch(
-                value: isSwitched,
+                value: BlocProvider.of<ThemeBloc>(context).state.isDark,
                 onChanged: (value) {
-                  isSwitched = value;
-                  print(value);
-                  setState(() {});
                   if (value == true) {
                     BlocProvider.of<ThemeBloc>(context)
-                    .add(ThemeChanged(theme: AppTheme.DarkTheme));
+                    .add(ThemeChanged(theme: AppTheme.DarkTheme, isDark: true));
                   } else {
                     BlocProvider.of<ThemeBloc>(context)
-                    .add(ThemeChanged(theme: AppTheme.LightTheme));
+                    .add(ThemeChanged(theme: AppTheme.LightTheme, isDark: false));
                   }
                 },
               ),
@@ -100,3 +93,10 @@ class _MenuState extends State<Menu> {
     );
   }
 }
+
+
+// BlocListener<ThemeBloc, ThemeState>(
+//                     listener: (context, state) {
+//                       values = state.isDark;
+//                     },
+//                   );

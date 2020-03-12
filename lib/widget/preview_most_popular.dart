@@ -1,5 +1,4 @@
 import 'package:anipocket/bloc/home_bloc.dart';
-import 'package:anipocket/bloc/home_event.dart';
 import 'package:anipocket/bloc/home_state.dart';
 import 'package:anipocket/models/request_type/tops.dart';
 import 'package:anipocket/widget/minimal_card_anime.dart';
@@ -7,21 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class PreviewMostPopular extends StatefulWidget {
-  @override
-  _PreviewMostPopularState createState() => _PreviewMostPopularState();
-}
-
-class _PreviewMostPopularState extends State<PreviewMostPopular> {
-  HomeBloc homeBloc;
-
-  @override
-  void initState() {
-    super.initState();
-    homeBloc = BlocProvider.of<HomeBloc>(context);
-    homeBloc.add(FetchData());
-  }
-
+class PreviewMostPopular extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

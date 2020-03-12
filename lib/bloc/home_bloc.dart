@@ -16,16 +16,30 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   @override
   Stream<HomeState> mapEventToState(HomeEvent event) async* {
-    yield HomeLoading();
     if (event is FetchData) {
       yield HomeLoading();
       try {
+        List<String> listUrl = [];
         final tops = await jikanApi.getTop(TopType.anime);
         final seasonAnime = await jikanApi.getSeasonAnime();
-        if (tops == null) {
+        if (seasonAnime != null) {
+          for (int i = 0; i < 5; i++) {
+            int idAnime = seasonAnime.anime[i].malId;
+            AnimeInfo animeInfo = await jikanApi.getAnimeInfo(idAnime);
+            if (animeInfo == null) {
+              yield HomeError(message: "Connection Error");
+            } else {
+              String urlPV = animeInfo.trailerUrl;
+              if (urlPV != null) {
+                listUrl.add(urlPV);
+              }
+            }
+          }
+        }
+        if (tops == null || seasonAnime == null) {
           yield HomeError(message: "Connection Error");
         } else {
-          yield HomeLoaded(tops: tops, seasonAnime: seasonAnime);
+          yield HomeLoaded(tops: tops, seasonAnime: seasonAnime, listUrl: listUrl);
         }
       } catch (e) {}
     }

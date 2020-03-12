@@ -1,3 +1,4 @@
+import 'package:anipocket/widget/pv_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,13 +19,13 @@ class PreviewPV extends StatelessWidget {
                         TextStyle(fontSize: 18, fontWeight: FontWeight.w400))),
           ),
           Container(
+            padding: EdgeInsets.only(left: 8, bottom: 8),
             height: 200,
-            width: MediaQuery.of(context).size.width,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 1,
+              itemCount: 10,
               itemBuilder: (context, index) {
-                return Container();
+                return PvCard();
               },
             ),
           )

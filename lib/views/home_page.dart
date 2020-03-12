@@ -1,5 +1,6 @@
 import 'package:anipocket/widget/menu.dart';
 import 'package:anipocket/widget/preview_most_popular.dart';
+import 'package:anipocket/widget/preview_pv.dart';
 import 'package:anipocket/widget/preview_this_season.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class HomePage extends StatelessWidget {
         child: Container(
           child: Column(
             children: <Widget>[
+              PreviewPV(),
               PreviewMostPopular(),
               PreviewThisSeason()
             ]

@@ -20,6 +20,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       yield HomeLoading();
       try {
         List<String> listUrl = [];
+        List<String> titleUrl = [];
         final tops = await jikanApi.getTop(TopType.anime);
         final seasonAnime = await jikanApi.getSeasonAnime();
         if (seasonAnime != null) {
@@ -30,8 +31,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
               yield HomeError(message: "Connection Error");
             } else {
               String urlPV = animeInfo.trailerUrl;
+              String title = animeInfo.title;
               if (urlPV != null) {
                 listUrl.add(urlPV);
+                titleUrl.add(title);
               }
             }
           }
@@ -39,7 +42,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         if (tops == null || seasonAnime == null) {
           yield HomeError(message: "Connection Error");
         } else {
-          yield HomeLoaded(tops: tops, seasonAnime: seasonAnime, listUrl: listUrl);
+          yield HomeLoaded(tops: tops, seasonAnime: seasonAnime, listUrl: listUrl, listTitlePV: titleUrl);
         }
       } catch (e) {}
     }

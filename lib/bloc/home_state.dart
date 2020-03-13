@@ -5,7 +5,8 @@ import "package:meta/meta.dart";
 
 abstract class HomeState extends Equatable {
   final List<String> listUrl;
-  HomeState({this.listUrl});
+  final List<String> listTitlePV;
+  HomeState({this.listUrl, this.listTitlePV});
 }
 
 class HomeInitial extends HomeState {
@@ -24,10 +25,13 @@ class HomeLoaded extends HomeState {
   final Tops tops;
   final SeasonAnime seasonAnime;
   final List<String> listUrl;
+  final List<String> listTitlePV;
   HomeLoaded({
     @required this.tops,
     @required this.seasonAnime,
-    @required this.listUrl});
+    @required this.listUrl,
+    @required this.listTitlePV
+  });
   @override
   List<Object> get props => null;
 }
